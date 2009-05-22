@@ -1,0 +1,259 @@
+<!-- ZOOM 14  -->
+<Style name="base">
+    <Rule>
+        <MinScaleDenominator>27000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <Filter>[tipo] = 'residencial'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">3</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>27000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <Filter>[tipo] = 'terciario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">8</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>27000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#AB7F47</CssParameter>
+            <CssParameter name="stroke-width">10</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+        <MinScaleDenominator>27000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <ElseFilter/>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">1</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule-->
+    <!-- ZOOM 15  -->
+    <Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>27000</MaxScaleDenominator>
+        <Filter>[tipo] = 'residencial'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">6</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>27000</MaxScaleDenominator>
+        <Filter>[tipo] = 'terciario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">10</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>27000</MaxScaleDenominator>
+        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#AB7F47</CssParameter>
+            <CssParameter name="stroke-width">12</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>27000</MaxScaleDenominator>
+        <ElseFilter/>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">3</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule-->
+    <!-- ZOOM 16  -->
+    <Rule>
+        <MinScaleDenominator>6771</MinScaleDenominator>
+        <MaxScaleDenominator>14000</MaxScaleDenominator>
+        <Filter>[tipo] = 'residencial'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">9</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>6771</MinScaleDenominator>
+        <MaxScaleDenominator>14000</MaxScaleDenominator>
+        <Filter>[tipo] = 'terciario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">12</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>6771</MinScaleDenominator>
+        <MaxScaleDenominator>14000</MaxScaleDenominator>
+        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#AB7F47</CssParameter>
+            <CssParameter name="stroke-width">14</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+        <MinScaleDenominator>6771</MinScaleDenominator>
+        <MaxScaleDenominator>14000</MaxScaleDenominator>
+        <ElseFilter/>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">7</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule-->
+    <!-- ZOOM 17  -->
+    <Rule>
+        <MinScaleDenominator>3385</MinScaleDenominator>
+        <MaxScaleDenominator>6771</MaxScaleDenominator>
+        <Filter>[tipo] = 'residencial'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">14</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>3385</MinScaleDenominator>
+        <MaxScaleDenominator>6771</MaxScaleDenominator>
+        <Filter>[tipo] = 'terciario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">16</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>3385</MinScaleDenominator>
+        <MaxScaleDenominator>6771</MaxScaleDenominator>
+        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#AB7F47</CssParameter>
+            <CssParameter name="stroke-width">18</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+        <MinScaleDenominator>3385</MinScaleDenominator>
+        <MaxScaleDenominator>6771</MaxScaleDenominator>
+        <ElseFilter/>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">10</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule-->
+    <!-- ZOOM 18  -->
+    <Rule>
+        <MinScaleDenominator>1693</MinScaleDenominator>
+        <MaxScaleDenominator>3385</MaxScaleDenominator>
+        <Filter>[tipo] = 'residencial'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">23</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>1693</MinScaleDenominator>
+        <MaxScaleDenominator>3385</MaxScaleDenominator>
+        <Filter>[tipo] = 'terciario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">25</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>1693</MinScaleDenominator>
+        <MaxScaleDenominator>3385</MaxScaleDenominator>
+        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#AB7F47</CssParameter>
+            <CssParameter name="stroke-width">27</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+        <MinScaleDenominator>1693</MinScaleDenominator>
+        <MaxScaleDenominator>3385</MaxScaleDenominator>
+        <ElseFilter/>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">12</CssParameter>
+            <CssParameter name="stroke-linejoin">miter</CssParameter>
+            <CssParameter name="stroke-linecap">round</CssParameter>
+        </LineSymbolizer>
+    </Rule-->
+    <!--Rule>
+      <Filter>[tipo] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule-->
+   <Rule>
+      <Filter>[tipo] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">3.6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[tipo] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+</Style>

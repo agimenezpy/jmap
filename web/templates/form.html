@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form id="first" action="#">
+    <ul>
+        <li class="info">
+            <h2>
+                My Cool Form
+            </h2>
+
+            <p>
+                This is my form. Please fill it out. It's awesome.
+            </p>
+        </li>
+        <li>
+            <label class="desc" for="text1">
+                Textbox
+            </label>
+            <input class="text medium" id="text1" type="text"/>
+        </li>
+        <li>
+            <label class="desc" for="text2">
+                Textarea
+            </label>
+            <textarea id="text2" class="textarea medium" rows="" cols=""></textarea>
+        </li>
+        <li>
+            <label class="desc">
+                Radio Buttons
+            </label>
+            <input class="radio" name="radiogroup" type="radio"/>
+            <label class="choice">
+                First choice
+            </label>
+            <input class="radio" name="radiogroup" type="radio"/>
+            <label class="choice">
+                Second choice
+            </label>
+            <input class="radio" name="radiogroup" type="radio"/>
+            <label class="choice">
+                Third choice
+            </label>
+        </li>
+        <li>
+            <label class="desc" for="requiredField">
+                Required Field
+                        <span class="req">
+                            *
+                        </span>
+            </label>
+            <select id="requiredField" class="select medium">
+                <option>
+                    First choice
+                </option>
+                <option>
+                    Second choice
+                </option>
+                <option>
+                    Third choice
+                </option>
+            </select>
+        </li>
+        <li>
+            <label class="desc" for="field4">
+                Number
+            </label>
+            <input value="0123456789" id="field4" class="number medium" type="text"/>
+        </li>
+        <li>
+            <label class="desc">
+                Money
+            </label>
+
+            <div>
+                <div class="left">
+                    $
+                </div>
+
+                <div class="left">
+                    <input class="text small number" type="text"/>
+                    .
+                    <p>
+                        Dollars
+                    </p>
+                </div>
+
+                <div>
+                    <input class="text" size="2" type="text"/>
+
+                    <p>
+                        Cents
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <input type="submit" class="button" value="Submit"/>
+            <input type="submit" class="button" value="Cancel"/>
+        </li>
+    </ul>
+</form>
+
+<form action="#" id="addressForm">
+    <ul>
+        <li class="info">
+            <h2>
+                Address Form
+            </h2>
+
+            <p>
+                Forms from
+                <a href="http://wufoo.com">
+                    Wufoo.com
+                </a>
+            </p>
+        </li>
+        <li>
+            <label class="desc" for="address1">
+                Your Address
+            </label>
+
+            <div>
+                <div>
+                    <input class="text large" type="text" id="address1"/>
+
+                    <p>Address Line 1</p>
+                </div>
+
+                <div>
+                    <input class="text large" type="text"/>
+
+                    <p>
+                        Address Line 2
+                    </p>
+                </div>
+
+                <div class="left">
+                    <input class="text medium" type="text"/>
+
+                    <p>
+                        City
+                    </p>
+                </div>
+
+                <div>
+                    <input class="text state" size="2" type="text"/>
+
+                    <p>
+                        State
+                    </p>
+                </div>
+
+                <div>
+                    <input class="text zip" type="text"/>
+
+                    <p>
+                        Zip Code
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <input type="submit" class="button" value="Submit"/>
+            <input type="submit" class="button" value="Cancel"/>
+        </li>
+    </ul>
+</form>
+
+<form action="#" id="nameForm">
+    <ul id="formFields">
+        <li class="info">
+            <h2>Name and Dates</h2>
+
+            <p>Demo of name and date fields</p>
+
+        </li>
+        <li><label class="desc" for="name">Name
+            <span class="req">*</span></label>
+
+            <div><div class="left"><input id="name" class="text" size="2" type="text">
+
+                <p>Title</p></div>
+
+                <div class="left"><input class="text small" type="text">
+
+                    <p>First</p></div>
+
+                <div class="left"><input class="text" size="14" type="text">
+
+                    <p>Last</p></div>
+
+                <div><input class="text" size="3" type="text">
+
+                    <p>Suffix</p></div></div>
+
+        </li>
+        <li>
+            <label class="desc" for="month">Date</label>
+
+            <div><div class="left"><input class="text" id="month" size="2" type="text"> / <p>MM</p></div>
+
+                <div class="left"><input class="text" size="2" type="text"> / <p>DD</p></div>
+
+                <div><input class="text" size="4" type="text"> <img src="images/icons/calendar.png"
+                                                                    alt="Pick Date.">
+
+                    <p>YYYY</p></div></div>
+
+            <label class="desc" for="time">
+                Time</label>
+
+            <div><div class="left"><input class="text" id="time" size="2" type="text"> : <p>HH</p></div>
+
+                <div class="left"><input class="text" size="2" type="text"> : <p>MM</p></div>
+
+                <div class="left"><input class="text" size="2" type="text">
+
+                    <p>SS</p></div>
+
+                <div><select class="select small"><option>AM</option><option>PM</option></select>
+
+                    <p>AM/PM</p></div></div>
+
+        </li><li>
+        <label class="desc" for="areaCode">Phone <span class="req">*</span></label>
+
+        <div><div class="left"><input class="text" id="areaCode" size="3" type="text"> - <p>(###)</p></div>
+
+            <div class="left"><input class="text" size="3" type="text"> - <p>###</p></div>
+
+            <div><input class="text" size="4" type="text">
+
+                <p>####</p></div></div>
+    </li>
+        <li>
+
+            <label class="desc" for="email">E-Mail <span class="req">*</span></label>
+
+            <div><input value="@" id="email" class="email medium" type="text"></div>
+        </li>
+    </ul>
+
+
+</form>
+<hr/>
+{% endblock %}
+
+{% block sub %}
+<div class="small box"><strong>Note: </strong>This is a box. It can be used for special messages both in the
+    sidebar and the content section. You could use it for special notes and announcements, but also as a frame
+    for photos. This space can be used for a short website presentation!</div>
+
+<h2>Nested Menu</h2>
+<ul class="menublock">
+    <li><a href="#">Menu option 1</a></li>
+    <li><a href="#">Menu option 2</a>
+        <ul>
+            <li><a href="#">Submenu 1</a></li>
+            <li><a href="#">Submenu 2</a></li>
+        </ul></li>
+    <li><a href="#">Menu option 3</a></li>
+    <li><a href="#">Menu option 4</a></li>
+</ul>
+
+<h2>Favorite Links</h2>
+<ul class="menublock">
+    <li><a href="http://andreasviklund.com/templates">Free website templates</a></li>
+    <li><a href="http://openwebdesign.org">Open Web Design</a></li>
+    <li><a href="http://www.solucija.com/index.php?id=17">sNews CMS</a></li>
+    <li><a href="http://oswd.org">OSWD.org</a></li>
+</ul>
+
+<div id="searchbar"><h2>Search This Site</h2>
+
+    <form action="#" method="get"><fieldset>
+        <input value="demo only" name="s" class="text small" id="s" alt="not functional, demo only"/>
+        <input type="submit" value="Go!" id="searchbutton" name="searchbutton"/>
+    </fieldset></form>
+</div>
+
+{% endblock %}

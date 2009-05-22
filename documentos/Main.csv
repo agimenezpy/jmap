@@ -1,0 +1,24 @@
+Module Name,Source Lines of Code,Effort Adjustment Factor,Nominal Person-Months,Estimated Person-Months,Productivity,Labor Rate,Cost,Cost per Instruction,Full Time Software Personnel,Risk,Module Breakage,Sizing Method,Function-Points,,Inputs,,,Outputs,,,Files,,,Interfaces,,,Queries,,,Equivalent  Source Lines of Code,Initial Source Lines of Code,Design Modified,Code Modified,Integration Modified,Software Understanding,Assessment and Assimilation,Unfamiliarity with Software,Component Automatically Translated,Automatic Translation Productivity,Computed Adaptation Adjustment Factor,Adapted Source Lines of Code,RCPX,,,RUSE,,,PDIF,,,PERS,,,PREX,,,FCIL,,,SCED,,,USR1,,,USR2,,,PREC,FLEX,RESL,TEAM,PMAT
+,Module Size,EAF,NOM Effort DEV,EST Effort DEV,PROD,$/month,COST,INST COST,Staff,RISK,BRAK,,Language,Low,Average,High,Low,Average,High,Low,Average,High,Low,Average,High,Low,Average,High,Total Unadjusted Function,ESLOC,INITSLOC,DM,CM,IM,SU,AA,UNFM,AT,ATPROD,AAF,ASLOC,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value
+"Mapa de Asuncion",2096,0.741762,6.415853,4.759036,440.425305,400.000000,1903.614506,0.908213,0.800880,0.000000,0.000000,SLOC,,,,,,,,,,,,,,,,,,,2096,,,,,,,,,,,L,0%,0.980000,N,0%,1.000000,L,0%,0.870000,N,0%,1.000000,H,0%,0.870000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,VH,N,H,VH,L
+"<sample>",Total SLOC,Schedule,Total Nominal Person-Months,Total Estimated Person-Months,Total Estimated Productivity,,Total Estimated Cost,Total Estimated Cost per Instruction,Total Estimated Full Time Software Personnel,Risk
+Optimistic,,5.250809,4.298622,3.188554,660.637958,,1275.421719,0.608503,0.607250
+Most Likely,2096,5.942261,6.415853,4.759036,440.425305,,1903.614506,0.908213,0.800880,0.000000
+Pessimistic,,6.735135,9.623780,7.138554,295.084955,,2855.421760,1.362320,1.059898
+
+Early Design Cost Driver,Rating,XL,VL,L,N,H,VH,XH
+Product Reliability and Complexity,RCPX,0.730000,0.810000,0.980000,1.000000,1.300000,1.740000,2.380000
+Required Reuse,RUSE,,,0.950000,1.000000,1.070000,1.150000,1.240000
+Platform Difficulty,PDIF,,,0.870000,1.000000,1.290000,1.810000,2.610000
+Personnel Capability,PERS,2.120000,1.620000,1.260000,1.000000,0.830000,0.630000,0.500000
+Personnel Experience,PREX,1.590000,1.330000,1.120000,1.000000,0.870000,0.710000,0.620000
+Facilities,FCIL,1.430000,1.300000,1.100000,1.000000,0.870000,0.730000,0.620000
+Required Development Schedule,SCED,,1.430000,1.140000,1.000000,1.000000,1.000000
+User-Defined 1,USR1,,1.000000,1.000000,1.000000,1.000000,1.000000
+Use-Defined 2,USR2,,1.000000,1.000000,1.000000,1.000000,1.000000
+
+Precedentedness,PREC,6.200000,4.960000,3.720000,2.480000,1.240000,0.000000
+Development Flexibility,FLEX,5.070000,4.050000,3.040000,2.030000,1.010000,0.000000
+Architecture/Risk Resolution,RESL,7.070000,5.650000,4.240000,2.830000,1.410000,0.000000
+Team Cohesion,TEAM,5.480000,4.380000,3.290000,2.190000,1.100000,0.000000
+Process Maturity,PMAT,7.800000,6.240000,4.680000,3.120000,1.560000,0.000000

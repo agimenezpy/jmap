@@ -1,0 +1,41 @@
+div.dokuwiki .pagename {
+    font-size: 150%;
+    padding-top: 10px;
+}
+
+div.dokuwiki .logo {
+    background: transparent url(/media/images/copyright.gif) no-repeat;
+    width: 64px;
+    height: 75px;
+    float: left;
+}
+
+div.dokuwiki .footerinc {
+	clear: both;
+}
+
+div.dokuwiki .footerinc p {
+	margin: 0px;
+	text-align: center;
+	line-height: normal;
+	font-size: smaller;
+    color: white;
+}
+
+div.dokuwiki .footerinc {
+  padding-top: __footer_padding__;
+  padding-bottom: __footer_padding__;
+}
+
+div.dokuwiki .footerinc a {
+  color: __highlight__;
+}
+
+div.dokuwiki a.action {
+    font-size: 80%;
+}
+
+div.dokuwiki .toolbox {
+    float: right;
+    padding: 50px 5px 0px 0px;
+}

@@ -1,0 +1,833 @@
+<Style name="stations">
+    <!--Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <Filter>[railway]='station' </Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/station_small.png" type="png" width="5" height="5" />
+    </Rule-->
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/station.png" type="png" width="9" height="9" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <Filter>[railway]='halt' or [railway]='tram_stop'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/halt.png" type="png" width="3" height="3" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <Filter>[railway]='halt'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#000" dy="-8" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway] ='halt'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <!--Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#000" dy="-8" halo_radius="1" wrap_width="0"/>
+    </Rule-->
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="12" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <Filter>[railway]='level_crossing'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/level_crossing.png" type="png" width="7" height="7" />
+    </Rule>
+</Style>
+
+<Style name="leisure">
+    <Rule>
+      <Filter>[man_made] = 'pier'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'residential'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#fff</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+	<CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+    <Rule>
+      <Filter>[leisure] = 'playground'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+        <CssParameter name="fill">#ccffff</CssParameter>
+     </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#666</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
+    <Rule>
+      <Filter>[tourism] = 'attraction'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2caea</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'quarry'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/quarry2.png" type="png" width="30" height="30"/>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+      <Filter>[leisure] = 'nature_reserve'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#abdf96</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+    <Rule>
+      <Filter>[leisure] = 'nature_reserve'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/nature_reserve.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'nature_reserve'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/nature_reserve2.png" type="png" width="42" height="48"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[landuse] = 'cemetery'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aacbaf</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[landuse] = 'residential'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ddd</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[military] = 'barracks'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ff8f8f</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <!--Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[military] = 'danger_area'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">pink</CssParameter>
+        <CssParameter name="fill-opacity">0.3</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[military] = 'danger_area'</Filter>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/danger.png" type="png" width="30" height="30"/>
+    </Rule-->
+     <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[landuse] = 'cemetery'</Filter>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/grave_yard.png" type="png" width="16" height="16"/>
+    </Rule>
+
+     <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[landuse] = 'meadow'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'park'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b6fdb6</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tourism] = 'zoo'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/zoo.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'common'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'garden'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'golf_course'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b5e3b5</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[landuse] = 'allotments'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#c8b084</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'forest'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#8dc56c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'forest'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/forest.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'farm'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ead8bd</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'recreation_ground'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'village_green'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'retail'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f1dada</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'retail'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">red</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+
+    <Rule>
+      <Filter>[landuse] = 'industrial'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ffaeb9</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <!--Rule>
+      <Filter>[power] = 'station'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>200000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbb</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+    <Rule>
+      <Filter>[power] = 'station'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbb</CssParameter>
+     </PolygonSymbolizer>
+    <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[power] = 'sub_station'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbb</CssParameter>
+     </PolygonSymbolizer>
+    <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[landuse] = 'commercial'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#efc8c8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'brownfield' or [landuse]='landfill'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#9d9d6c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aed1a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[natural] = 'heath'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ffffc0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'basin'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b5d0d0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f0f0d8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">brown</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[amenity] = 'parking'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#f7efb7</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'parking'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#eeeed1</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+
+    <Rule>
+      <Filter>[railway] = 'station' or [building] = 'station'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#fff68f</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[building] = 'supermarket'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">pink</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#cc9999</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#111</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[leisure] = 'sports_centre' or [leisure]='stadium' or [leisure]='track'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#33cc99</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'pitch'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#8ad3af</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'terminal'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#cc99ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'terminal'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#330066</CssParameter>
+        <CssParameter name="stroke-width">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'apron'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#f0e0ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'beach'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/beach.png" type="png" width="10" height="10"/>
+    </Rule>
+
+    <!--Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">lightgrey</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+</Style>
+
+<Style name="area-text">
+    <Rule>
+      <Filter>[military] = 'danger_area'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &gt;= 150000</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &gt;= 30000 and [way_area] &lt; 150000</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &gt;= 3000 and [way_area] &lt; 80000</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &lt; 3000</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+</Style>
+
+<Style name="amenity">
+    <Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/airport.png" type="png" width="14" height="11" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-10" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[aeroway]='aerodrome'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/aerodrome.png" type="png" width="10" height="9" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[aeroway]='aerodrome'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='post_box'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/post_box.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='atm'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/atm.png" type="png" width="25" height="11" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='post_office'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/post_office.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <Filter>[railway]='level_crossing'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/level_crossing.png" type="png" width="7" height="7" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[railway]='level_crossing'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/level_crossing2.png" type="png" width="11" height="11" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='pub'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/pint.png" type="png" width="12" height="18" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <Filter>[natural]='peak'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/peak.png" type="png" width="8" height="8" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[man_made]='mast'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/tower.png" type="png" width="32" height="32" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+       <Filter>[man_made]='power_wind' or [power]='generator'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/power_wind.png" type="png" width="16" height="26" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[man_made]='windmill'</Filter>
+      <PointSymbolizer file = "/home/agimenez/Desktop/mapas/osm-mapnik/symbols/windmill.png" type="png" width="10" height="15" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='recycling'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/recycling.png" type="png" width="20" height="20" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='hospital'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/hospital.png" type="png" width="20" height="20" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/bus_stop.png" type="png" width="30" height="12" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[amenity]='parking'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'christian'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'muslim'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/mosque.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'sikh'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/sikh.png" type="png" width="25" height="26" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'jewish'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/synagogue.png" type="png" width="16" height="18" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/place_of_worship3.png" type="png" width="10" height="10" allow_overlap="false"/>
+     </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='airport'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/airport.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[highway]='mini_roundabout'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/mini_round.png" type="png" width="9" height="9" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[highway]='gate'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/osm-mapnik/symbols/gate.png" type="png" width="4" height="5" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='fueli'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/symbols/fuel_station.png" type="png" width="32" height="32" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='police'</Filter>
+      <PointSymbolizer file="/home/agimenez/Desktop/mapas/symbols/police.png" type="png" width="24" height="29" allow_overlap="false"/>
+    </Rule>
+</Style>
+
+<Style name="text">
+    <Rule>
+      <Filter>[place] = 'island'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" dy="0" halo_radius="1" wrap_width="0" />
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#000" dy="0" halo_radius="2" wrap_width="0" />
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="2" wrap_width="20" />
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#777777" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'village' or [place] = 'suburb'</Filter>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="2" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'village' or [place] = 'suburb'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'pub'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="brown" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
+     <Rule>
+      <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="18" halo_radius="1" wrap_width="30"/>
+    </Rule>
+
+    <Rule>
+      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'wood'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'peak'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="brown" dy="10" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+
+    <Rule>
+      <Filter>[tourism] &lt;&gt; ''</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#660033" halo_radius="2" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'school' or [amenity] = 'college' or [amenity] = 'university'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'hospital'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" dy="12" halo_radius="2" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>200000</MinScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-8" min_distance="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
+    </Rule>
+</Style>
+
+<Style name="direcciones">
+    <Rule>
+      <Filter>[direccion] = 1</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,9,153</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,2,154</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,1,155</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[direccion] = -1 </Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,13,9,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,14,2,158</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,15,1,158</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
