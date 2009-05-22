@@ -1,0 +1,20 @@
+div#map {
+  position: relative;
+  background-color: rgb(229, 227, 223);
+  border:1px solid #979797;
+  width: 600px;
+  height:400px;
+  position: relative
+}
+
+div#stip {
+  border:1px solid #979797;
+  position: absolute;
+  opacity: 0.8;
+  background-color: #FFFFFF;
+  width: 540px;
+  padding: 0 10px 0 10px;
+  left: 450px;
+  top: 220px;
+  text-align: left;
+}

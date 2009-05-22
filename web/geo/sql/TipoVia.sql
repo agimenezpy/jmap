@@ -1,0 +1,11 @@
+INSERT INTO tipo_via VALUES (default, 'nacional');
+INSERT INTO tipo_via VALUES (default, 'ramal');
+INSERT INTO tipo_via VALUES (default, 'primaria');
+INSERT INTO tipo_via VALUES (default, 'secundaria');
+INSERT INTO tipo_via VALUES (default, 'terciaria');
+INSERT INTO tipo_via VALUES (default, 'residencial');
+INSERT INTO tipo_via VALUES (default, 'ferrea');
+INSERT INTO tipo_via VALUES (default, 'rural');
+INSERT INTO tipo_via VALUES (default, 'pasaje');
+INSERT INTO tipo_via VALUES (default, 'peatonal');
+INSERT INTO tipo_via VALUES (default, 'ciclovia');

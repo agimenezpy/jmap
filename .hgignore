@@ -1,0 +1,24 @@
+syntax: glob
+*.pyc
+*~
+dokuwiki/pages/calle/*.txt
+dokuwiki/pages/barrio/*.txt
+dokuwiki/tpl/jma/images/*
+dokuwiki/tpl/jma/lang/*
+dokuwiki/tpl/jma/arctic_*.css
+dokuwiki/tpl/jma/conf/metadata.php
+dokuwiki/tpl/jma/copying
+dokuwiki/tpl/jma/design.css
+dokuwiki/tpl/jma/detail.php
+dokuwiki/tpl/jma/layout.css
+dokuwiki/tpl/jma/media*
+dokuwiki/tpl/jma/print.css
+dokuwiki/tpl/jma/readme
+dokuwiki/tpl/jma/rtl.css
+dokuwiki/tpl/jma/script.js
+dokuwiki/tpl/jma/style.ini.dist
+dokuwiki/tpl/jma/tpl_functions.php
+dokuwiki/tpl/jma/version
+documentos/*.pdf
+documentos/*.png
+*.gz
