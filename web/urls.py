@@ -5,7 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^$', 'jma.main.views.default', {'page' : 'index.html'}),
-    (r'^([^/]+.html)$', 'jma.main.views.default'),
-    (r'^([^/]+.xhr)$', 'jma.main.views.xhr'),
+    (r'^$', 'web.main.views.default', {'page' : 'index.html'}),
+    (r'^([^/]+.html)$', 'web.main.views.default'),
+    (r'^([^/]+.xhr)$', 'web.main.views.xhr'),
 )

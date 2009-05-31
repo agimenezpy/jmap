@@ -1,7 +1,7 @@
 from django.db import connection
 from django.contrib.gis.geos import fromstr
 #from guiadigital.site.geoutils import createEncodings
-from jma.geo.models import *
+from web.geo.models import *
 from re import compile, U, I, sub
 
 fsm = compile(r"((?:\w+ ?)+)(/ ?(?:\w+ ?)+)?(, ?(?:\w+ ?)+)?(, ?(?:\w+ ?)+)?", U + I)
