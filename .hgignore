@@ -5,4 +5,8 @@ dokuwiki/data/pages/calle/*.txt
 dokuwiki/data/pages/barrio/*.txt
 documentos/*.pdf
 documentos/*.png
+scripts/*.txt
+scripts/TXT/*
+scripts/*.log
+scripts/*.dump
 *.gz
