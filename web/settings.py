@@ -65,13 +65,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'jma.urls'
+ROOT_URLCONF = 'web.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/media/KINGSTON/Aplicaciones/jma/templates/',
+    '/home/agimenez/Desktop/jmawiki/jma/web/templates/',
     '/usr/share/python-support/python-django/django/contrib/gis/templates/',
 )
 
@@ -80,7 +80,7 @@ INSTALLED_APPS = (
     #'django.contrib.contenttypes',
     #'django.contrib.sessions',
     #'django.contrib.sites',
-    'jma.geo'
+    'web.geo'
 )
 
 GOOGLE_MAPS_API_KEY = "ABQIAAAA2EhgZ1jVWk36csfuDTqSMRScZ9FFBPdIfs42p3375FIhFRQUIxRyAlTKkDfq3zQh_52s_D1M7jY22w&amp;hl=es"

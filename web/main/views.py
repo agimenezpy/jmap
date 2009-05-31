@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse
 from django.template import TemplateDoesNotExist, RequestContext
-from jma.main import mapa, query
+from web.main import mapa, query
 
 def default(request, page):
     try:
