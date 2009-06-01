@@ -55,11 +55,21 @@ class Calle:
             return ""
         
     def nombre_id(self):
-        clean = reduce(lambda x,y: x + " " + y, filter(lambda i: not match("^(DE|LA|LAS|DEL)$", i), sub(",|\.|'|╨", "", self.nombre).split()))
-        result = reduce(lambda x,y: x + "_" + y, clean.decode("latin-1").lower().split()[0:2]).encode("latin-1") + "." + str(self.id)
+        clean = reduce(lambda x,y: x + " " + y, filter(lambda i: not match("^(DE|LA|LAS|DEL|Y)$", i), sub(",|\.|'|╨", "", self.nombre).split()))
         remp = {"А" : "a", "И" : "e", "М" : "i", "С" : "o", "З" : "u", "Я" : "n", "Э" : "u"}
+        clean = clean.decode("latin-1").lower().encode("latin-1")
         for k, v in remp.iteritems():
-            result = result.replace(k, v)
+            clean = clean.replace(k, v)
+        end = 2
+        result = ""
+        last = ""
+        while not result or registered.has_key(result):
+            last = result
+            result = reduce(lambda x,y: x + "_" + y, clean.decode("latin-1").split()[0:end]).encode("latin-1")
+            if last == result:
+                result += "_" + str(self.id)
+            end += 1
+        registered[result] = True
         return result
     
     def convert(self, strT):
@@ -68,7 +78,7 @@ class Calle:
 class Barrio:
     def __init__(self):
         self.reg = []
-        self.ref = {}
+        self.ref = {63:"barrio:banco_san_miguel"}
         self.remp = {"А" : "a", "И" : "e", "М" : "i", "С" : "o", "З" : "u", "Я" : "я"}
         fd = open("barrios.dat", "r")
         try:
@@ -109,12 +119,22 @@ class Barrio:
 class Distrito:
     def __init__(self):
         self.reg = []
+        self.ref = {13:"distrito:lambare"}
         self.remp = {"А" : "a", "И" : "e", "М" : "i", "С" : "o", "З" : "u", "Я" : "я"}
         fd = open("distritos.dat", "r")
         try:
             while True:
                 ident, nombre = fd.next().strip().split()
                 self.reg.append((int(ident), nombre))
+        except StopIteration:
+            pass
+        fd.close()
+        
+        fd = open("distrito_asoc.txt", "r")
+        try:
+            while True:
+                ident, nombre = fd.next().strip().split(" ", 1)
+                self.ref[int(ident)] = nombre
         except StopIteration:
             pass
         fd.close()
@@ -130,7 +150,7 @@ class Distrito:
     def link(self, value):
         id = self.getId(value)
         if id:
-            return "[[distrito:%d|%s]]" % (id, value)
+            return "[[%s|%s]]" % (self.ref[id], value)
         else:
             print value
             return None
@@ -146,6 +166,8 @@ def unpack(list):
                 result += first + i
                 first = ", "
         return result
+
+registered = {}
 
 if __name__ == '__main__':
     src = 'TXT'
@@ -187,6 +209,7 @@ if __name__ == '__main__':
                         #if match(".*([A-Z0-9аимсз]| )\.$", c.nombre):
                         #    c.nombre = c.nombre[:-1]
                         c.nombre = c.nombre.replace("╢", "'")
+                        c.nombre = sub("\s{2,}", " ", c.nombre)
                         if (len(par) == 2):
                             c.referencia = par[1].replace(")", "").replace(".", "")
                     elif (actual == "Ubicacion"):
