@@ -79,6 +79,34 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
             "_data" => "",
             "src" => DOKU_BASE."media/scripts/openlayersmap.js"
             );
+        $event->data["link"][] = array (
+            "type" => "text/css",
+            "rel" => "stylesheet", 
+            "href" => DOKU_BASE."media/styles/theme/default/style.css",
+          );
+        $event->data["style"][] = array ("type" => "text/css",
+            "charset" => "utf-8",
+            "_data" => "                             
+                .olControlAttribution {
+                   bottom: 0em;
+                }
+                
+                .olControlScale {
+                   left: 0px;
+                   bottom: 0px;
+                   text-align: left;
+                }
+                
+                .olControlNavToolbar div {
+                   top: 230px;
+                   height: 24px;
+                   width: 24px;
+                }
+                
+                .olControlMousePosition {
+                    top: 0px;
+                }");
+
     }
   }
 }
