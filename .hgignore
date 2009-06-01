@@ -3,6 +3,7 @@ syntax: glob
 *~
 dokuwiki/data/pages/calle/*.txt
 dokuwiki/data/pages/barrio/*.txt
+dokuwiki/data/pages/distrito/*.txt
 documentos/*.pdf
 documentos/*.png
 scripts/*.txt

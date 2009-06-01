@@ -2,16 +2,15 @@
 # -*- coding: iso8859-1 -*-
 import os
 from re import match, compile, findall, split, sub
+from GenWiki import Barrio
 
-class Barrio:
+class Distrito:
     def __init__(self):
         self.id = 0
         self.nombre = ""
         self.referencia = ""
         self.descripcion = ""
         self.ubicacion = ""
-        self.superficie = ""
-        self.poblacion = ""
         self.tmpl = """
 ====== %(nombre)s ======
 
@@ -27,23 +26,20 @@ class Barrio:
 
 %(ubicacion)s
 
-^  Superficie  |  %(superficie)s  |
-^  Población  |  %(poblacion)s  |
-
 """
 
     def __str__(self):
-        return "Nombre: %s (%s)\nRef: %s\nDescripci\xf3n: %s\nUbicaci\xf3n: %s\nSuperficie: %s\nPoblación: %s\n" % (self.nombre, self.id, self.referencia, self.descripcion, self.ubicacion, self.superficie, self.poblacion)
+        return "Nombre: %s (%s)\nRef: %s\nDescripci\xf3n: %s\nUbicaci\xf3n: %s\n" % (self.nombre, self.id, self.referencia, self.descripcion, self.ubicacion)
 
     def __repr__(self):
         return self.__str__()
     
     def save(self, nombre):
         genid = self.nombre_id()
-        fd = open("../dokuwiki/data/pages/barrio/%s.txt" % genid, "w")
+        fd = open("../dokuwiki/data/pages/distrito/%s.txt" % genid, "w")
         fd.write(self.convert(self.tmpl % self))
         fd.close()
-        return "%d barrio:%s" % (self.id, genid)
+        return "%d distrito:%s" % (self.id, genid)
     
     def __getitem__(self, strk):
         if hasattr(self, strk):
@@ -68,11 +64,11 @@ class Barrio:
     def convert(self, strT):
         return strT.decode("latin-1").encode("UTF-8")
 
-class Barrios:
+class Distritos:
     def __init__(self):
         self.reg = []
         self.remp = {"á" : "a", "é" : "e", "í" : "i", "ó" : "o", "ú" : "u", "ñ" : "Ñ"}
-        fd = open("barrios.dat", "r")
+        fd = open("distritos.dat", "r")
         try:
             while True:
                 ident, nombre = fd.next().strip().split(" ", 1)
@@ -93,7 +89,7 @@ class Barrios:
     def link(self, value):
         id = self.getId(value)
         if id:
-            return "[[barrio:%d|%s]]" % (id, value)
+            return "[[distrito:%d|%s]]" % (id, value)
         else:
             return None
 
@@ -112,69 +108,67 @@ def unpack(list):
 registered = {}
 
 if __name__ == '__main__':
-    comp = [compile("^[A-ZÁÉÍÓÚÑ0-9][A-ZÁÉÍÓÚÑ0-9'\.].*\((Resoluci\xf3n|Ordenanza|Decreto).*\)(\.)?$|^[A-WY-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\.].*(\.)?"),
-            compile("^Ubicaci\xf3n:.*"),
-            compile("^Superficie.*:.*"),
-            compile("^Poblaci\xf3n.*")]
-    categoria = {0 : "Barrio", 1 : "Ubicacion", 2 : "Superficie", 3 : "Poblacion", 4 : "otro"}
+    comp = compile("^[A-ZÁÉÍÓÚÑ0-9][A-ZÁÉÍÓÚÑ0-9'\.].*\((Resoluci\xf3n|Ordenanza|Decreto).*\)(\.)?$|^[A-WY-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\.].*(\.)?")
+    cbarrios = compile("([^,]+,|[^,]+.$)")
+    categoria = {0 : "Distrito", 1 : "otro"}
+    d = Distrito()
     b = Barrio()
-    barrios = Barrios()
-    asoc = open("barrio_asoc.txt", "w")
+    distritos = Distritos()
+    asoc = open("distrito_asoc.txt", "w")
     last = ""
-    #1680 2198 Barrios de Asuncion BYTES 61719
-    lno = 1680
+    #3159 3181 Distritos de Asuncion BYTES 142749
+    lno = 3159
     nombre = "Asuncion007-Plazas_Otros.txt"
     print "Procesando " + nombre
     f = open(nombre, 'r')
-    f.seek(60538)
-    while (lno < 2198):
-        num = 4;
+    f.seek(142749)
+    links = {}
+    while (lno < 3181):
         linea = f.next().strip()
-        for i in range(0, 4):
-            if (comp[i].match(linea)):
-                num = i
-                break
+        if (comp.match(linea)):
+            num = 0
+        else:
+            num = 1
         if (isValid(linea)):
             actual = categoria.get(num)
-            if (actual == "Barrio"):
+            if (actual == "Distrito"):
                 if (len(last) > 0):
-                    asoc.write(b.save(nombre) + "\n")
-                    b.__init__()
+                    d.descripcion = "(Articulo 4º)."
+                    bars = map(lambda st: sub("\.$", "", st.replace(",", "").strip()),
+                        filter(lambda x: len(x) > 0, cbarrios.split(d.ubicacion[d.ubicacion.index(":")+1:]))
+                        )
+                    for bar in bars:
+                        if not links.has_key(bar):
+                            links[bar] = b.link(bar)
+                        d.ubicacion = d.ubicacion.replace(bar, links[bar])
+                    asoc.write(d.save(nombre) + "\n")
+                    d.__init__()
                 par = linea.split("(")
-                b.nombre = par[0].replace("[", "(").replace("]", ")").strip()
-                #if match(".*([A-Z0-9ÁÉÍÓÚ]| )\.$", b.nombre):
-                #    print b.nombre
-                #    b.nombre = b.nombre[:-1]
-                b.nombre = b.nombre.replace("´", "'")
+                d.nombre = par[0].replace("[", "(").replace("]", ")").strip()
+                d.nombre = d.nombre.replace("´", "'").replace("PARROQUIA ", "")
                 if (len(par) == 2):
-                    b.referencia = par[1].replace(")", "").replace(".", "")
-                b.id = barrios.getId(b.nombre)
-                if not b.id:
-                    b.id = -1
-                    print b.nombre
-            elif (actual == "Ubicacion"):
-                b.ubicacion = linea.split(":")[1].strip()
-            elif (actual == "Superficie"):
-                linea = linea.split(":")[1].strip().rstrip('.')
-                b.superficie = linea
-            elif (actual == "Poblacion"):
-                linea = linea.split(":")[1].strip().rstrip('.')
-                b.poblacion = linea
+                    d.referencia = par[1].replace(")", "").replace(".", "")
+                d.id = distritos.getId(d.nombre)
+                if not d.id:
+                    d.id = -1
+                    print d.nombre
             else:
-                if (last == "Barrio"):
-                    if (b.descripcion):
-                        b.descripcion = b.descripcion + " " + linea.strip()
-                    else:
-                        b.descripcion = linea.strip()
+                if (d.ubicacion):
+                    d.ubicacion = d.ubicacion + " " + linea.strip()
                 else:
-                    if (b.ubicacion):
-                        b.ubicacion = b.ubicacion + " " + linea.strip()
-                    else:
-                        b.ubicacion = linea.strip()
+                    d.ubicacion = linea.strip()
             if (actual != "otro"):
                 last = actual
         lno += 1
     f.close()
-    asoc.write(b.save(nombre) + "\n")
+    d.descripcion = "(Articulo 4º)."
+    bars = map(lambda st: sub("\.$", "", st.replace(",", "").strip()),
+        filter(lambda x: len(x) > 0, cbarrios.split(d.ubicacion[d.ubicacion.index(":")+1:]))
+        )
+    for bar in bars:
+        if not links.has_key(bar):
+            links[bar] = b.link(bar)
+        d.ubicacion = d.ubicacion.replace(bar, links[bar])
+    asoc.write(d.save(nombre) + "\n")
     asoc.close()
-    os.system("chgrp www-data ../dokuwiki/data/pages/barrio/ -R; chmod g+w ../dokuwiki/data/pages/barrio -R")
+    os.system("chgrp www-data ../dokuwiki/data/pages/distrito/ -R; chmod g+w ../dokuwiki/data/pages/distrito -R")
