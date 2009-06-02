@@ -105,7 +105,18 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
                 
                 .olControlMousePosition {
                     top: 0px;
-                }");
+                }
+                
+                .olControlNavToolbar .olControlPointItemInactive {
+                    background-image: url(/media/images/QueryDisable.png);
+                    background-repeat: no-repeat;
+                }
+                
+                .olControlNavToolbar .olControlPointItemActive {
+                    background-image: url(/media/images/QueryEnable.png);
+                    background-repeat: no-repeat;
+                }
+        ");
 
     }
   }
