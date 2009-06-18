@@ -1,4 +1,6 @@
 # Django settings for jma project.
+import os
+JMA_ADMIN_DIR = os.path.dirname(__file__)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -9,10 +11,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'asuncion'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'root'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'myadmin'         # Not used with sqlite3.
+DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = 'guiadigital'             # Or path to database file if using sqlite3.
+DATABASE_USER = 'gisadm'             # Not used with sqlite3.
+DATABASE_PASSWORD = 'ge0spatial'         # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
@@ -71,7 +73,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/agimenez/Desktop/jmawiki/jma/web/templates/',
+    os.path.join(JMA_ADMIN_DIR, 'templates'),
     '/usr/share/python-support/python-django/django/contrib/gis/templates/',
 )
 
