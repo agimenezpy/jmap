@@ -1,20 +1,6 @@
 # -*- coding: iso-8859-1 -*- 
 from django.contrib.gis.db import models
 
-class Detalle(models.Model):
-    id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=60)
-    ref = models.CharField(max_length=30)
-    descripcion = models.TextField()
-    ubicacion = models.TextField()
-    
-    def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
-    
-    class Meta:
-        db_table = "detalle"
-        verbose_name_plural = "Información del libro"
-
 class TipoVia(models.Model):
     id = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=40)
@@ -35,19 +21,7 @@ class TipoLimite(models.Model):
     
     class Meta:
         db_table = "tipo_limite"
-        verbose_name_plural = "Tipos de Límites Políticos"
-
-class Autor(models.Model):
-    id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=60)
-    copyright = models.CharField(max_length=90)
-    
-    def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
-    
-    class Meta:
-        db_table = "autor"
-        verbose_name_plural = "Autor de Datos"
+        verbose_name_plural = u"Tipos de Límites Políticos"
 
 class Limite(models.Model):
     id = models.AutoField(primary_key=True)
@@ -56,8 +30,8 @@ class Limite(models.Model):
     zorder = models.IntegerField(default=0)
     tipo = models.ForeignKey(TipoLimite)
     parent = models.ForeignKey("self", null=True)
-    autor = models.ForeignKey(Autor)
-    the_geom = models.PolygonField(srid=32721)
+    wiki_id = models.CharField(max_length=100,null=True)
+    the_geom = models.PolygonField()
     objects = models.GeoManager()
     
     def __unicode__(self):
@@ -65,19 +39,14 @@ class Limite(models.Model):
     
     class Meta:
         db_table = "limite_politico"
-        verbose_name_plural = "Límites Políticos"
+        verbose_name_plural = u"Límites Políticos"
 
 class Via(models.Model):
     id = models.AutoField(primary_key=True)
-    ref_id = models.IntegerField(null=False)
-    nombre = models.CharField(max_length=70)
-    abrev = models.CharField(max_length=50)
-    detalle = models.ForeignKey(Detalle,null=True)
-    direccion = models.IntegerField(default=0)
-    tipo = models.ForeignKey(TipoVia)
-    zorder = models.IntegerField(default=0)
-    prioridad = models.IntegerField(default=0)
-    the_geom = models.LineStringField(srid=32721)
+    nombre = models.CharField(max_length=100)
+    abrev = models.CharField(max_length=70)
+    the_geom = models.MultiLineStringField()
+    wiki_id = models.CharField(max_length=100,null=True)
     objects = models.GeoManager()
 
     def __unicode__(self):
@@ -85,15 +54,18 @@ class Via(models.Model):
     
     class Meta:
         db_table = "via_transito"
-        verbose_name_plural = "Vias de Transito"        
+        verbose_name_plural = "Vias de Transito"
 
 class ViaTrazo(models.Model):
     id = models.AutoField(primary_key=True)
-    ref_id = models.IntegerField(null=False)
+    ref = models.ForeignKey(Via,null=True)
+    direccion = models.IntegerField(default=0)
+    num_ini = models.SmallIntegerField(default=0)
+    num_fin = models.SmallIntegerField(default=0)
     tipo = models.ForeignKey(TipoVia)
     zorder = models.IntegerField(default=0)
     prioridad = models.IntegerField(default=0)
-    the_geom = models.LineStringField(srid=32721)
+    the_geom = models.LineStringField()
     objects = models.GeoManager()
     
     def __unicode__(self):
@@ -119,8 +91,8 @@ class AreaInteres(models.Model):
     nombre = models.CharField(max_length=60)
     zorder = models.IntegerField(default=0)
     tipo = models.ForeignKey(TipoAOI)
-    autor = models.ForeignKey(Autor)
-    the_geom = models.PolygonField(srid=32721)
+    wiki_id = models.CharField(max_length=100,null=True)
+    the_geom = models.PolygonField()
     
     def __unicode__(self):
         return "[%d] %s" % (self.id, self.nombre)
@@ -145,8 +117,8 @@ class PuntoInteres(models.Model):
     nombre = models.CharField(max_length=90)
     zorder = models.IntegerField(default=0)
     tipo = models.ForeignKey(TipoPOI)
-    autor = models.ForeignKey(Autor)
-    the_geom = models.PointField(srid=32721)
+    wiki_id = models.CharField(max_length=100,null=True)
+    the_geom = models.PointField()
     objects = models.GeoManager()
     
     def __unicode__(self):
@@ -155,15 +127,3 @@ class PuntoInteres(models.Model):
     class Meta:
         db_table = "punto_interes"
         verbose_name_plural = "Puntos de Interes"
-    
-#class ViaLibro(models.Model):
-#    via = models.IntegerField(null=False)
-#    libro = models.IntegerField(null=False)
-    
-#    def __unicode__(self):
-#        return "(%d, %d)" % (self.via, self.libro)
-#    
-#    class Meta:
-#        db_table = "via_libro"
-#        verbose_name_plural = "Via por libro"
-#    
