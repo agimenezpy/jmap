@@ -1,5 +1,5 @@
 ====== Principal ======
   * [[inicio|Inicio]]
-  * [[mapa:gmap|Mapa Interactivo]]
+  * [[mapa:olay|Mapa Interactivo]]
   * [[mapa:buscar|Búsqueda Avanzada]]
   * [[ayuda|Ayuda]]

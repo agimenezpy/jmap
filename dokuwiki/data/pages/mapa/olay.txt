@@ -2,6 +2,7 @@
 <html>
 <center>
 <div id="map"><div id="msg" style="color: gray; font-size: 1em; text-align: left">Cargando ...</div></div>
+<div id="detalle" style="text-align: justify"></div>
 <div id="stip" style="display: none;">
     <!--hr class="clear-contentunit"/-->
     <h1>Búsqueda Rápida</h1>
