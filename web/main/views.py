@@ -27,7 +27,7 @@ def calle(request):
     if params.has_key("query"):
         result = {}
         result["resultado"] = True
-        nombre = params["query"].strip().replace(" "," & ")
+        nombre = params["query"].encode("latin-1").strip().replace(" "," & ")
         result["items"] = Via.objects.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
         result["count"] = len(result["items"])
         return render_to_response("calle.html", result, mimetype="application/javascript; charset=iso8859-1")
