@@ -60,6 +60,9 @@ class ViaAdmin(ClaseBase,admingis.GeoModelAdmin):
         }),
         (u'Publicación', {
             'fields' : ('wiki_id','zorder', 'prioridad')
+        }),
+        (u'Ubicación Geográfica', {
+            'fields' : ('the_geom',)
         })
     )
 

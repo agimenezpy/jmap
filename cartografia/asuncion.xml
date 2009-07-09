@@ -58,7 +58,7 @@
         <Datasource>
           &dbparams;
           <Parameter name="table">
-            (select a.id, t.descripcion as tipo,the_geom,area(the_geom) as area
+            (select a.id, t.descripcion as tipo,the_geom,a.area
              from area_interes a
              join tipo_area_interes t on t.id = a.tipo_id
              order by zorder,area(the_geom) desc) as area
@@ -107,8 +107,20 @@
         </Datasource>
     </Layer>
     
-    <!--Layer name="lugar" status="on" srs="&srs4326;" clear_label_cache='true'>
+    <Layer name="lugar" status="on" srs="&srs4326;" clear_label_cache='true'>
         <StyleName>lugar</StyleName>
+        <StyleName>texto_lugar</StyleName>
+        <Datasource>
+          &dbparams;
+          <Parameter name="table">
+            (select p.id, t.descripcion as tipo,the_geom
+             from punto_interes p
+             join tipo_punto_interes t on t.id = p.tipo_id) as lugar
+          </Parameter>
+        </Datasource>
+   </Layer>
+    
+    <Layer name="texto_lugar" status="on" srs="&srs4326;" clear_label_cache='true'>
         <StyleName>texto_lugar</StyleName>
         <Datasource>
           &dbparams;
@@ -118,14 +130,14 @@
              join tipo_punto_interes t on t.id = p.tipo_id) as lugar
           </Parameter>
         </Datasource>
-   </Layer-->
+   </Layer>
     
     <Layer name="texto_area" status="on" srs="&srs4326;" clear_label_cache='true'>
         <StyleName>texto_area</StyleName>
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select a.id, a.nombre,t.descripcion as tipo,the_geom,area(the_geom) as area
+            (select a.id, a.nombre,t.descripcion as tipo,the_geom,a.area
              from area_interes a
              join tipo_area_interes t on t.id = a.tipo_id
              order by zorder,area(the_geom) desc) as texto_area

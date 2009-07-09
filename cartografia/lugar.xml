@@ -90,7 +90,7 @@
 
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <Filter>[tipo] = 'parada'</Filter>
+      <Filter>[tipo] = 'terminal'</Filter>
       <PointSymbolizer file="&symbols_dir;/bus_stop.png" type="png" width="30" height="12" />
     </Rule>
 
@@ -144,6 +144,11 @@
       <Filter>[tipo] = 'comisaria'</Filter>
       <PointSymbolizer file="&symbols_dir;/police.png" type="png" width="24" height="29" allow_overlap="false"/>
     </Rule>
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[tipo] = 'estacion'</Filter>
+      <PointSymbolizer file = "&symbols_dir;/station.png" type="png" width="9" height="9" />
+    </Rule>
 </Style>
 
 <Style name="texto_lugar">
@@ -152,7 +157,7 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="10" fill="brown" dy="16" halo_radius="1" wrap_width="0"/>
     </Rule>
-     <Rule>
+    <Rule>
       <Filter>[tipo].match('templo.*') or [tipo] = 'comisaria'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="18" halo_radius="1" wrap_width="30"/>
@@ -176,5 +181,10 @@
       <Filter>[tipo] = 'hospital'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="9" fill="#000033" dy="12" halo_radius="2" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[tipo] = 'estacion'</Filter>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="12" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
     </Rule>
 </Style>

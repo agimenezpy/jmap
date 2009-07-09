@@ -40,7 +40,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[tipo] = 'cuartel militar'</Filter>
+      <Filter>[tipo] = 'cuartel'</Filter>
       <PolygonSymbolizer>
         <CssParameter name="fill">#ff8f8f</CssParameter>
       </PolygonSymbolizer>
@@ -174,7 +174,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[tipo] = 'terminal de bus'</Filter>
+      <Filter>[tipo] = 'terminal'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
      <PolygonSymbolizer>
          <CssParameter name="fill">#fff68f</CssParameter>
@@ -218,7 +218,7 @@
       </LineSymbolizer>
     </Rule>
      <Rule>
-      <Filter>[tipo] = 'centro deportivo' or [tipo]='estadio' or [tipo]='pista'</Filter>
+      <Filter>[tipo] = 'deporte' or [tipo]='estadio' or [tipo]='pista'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#33cc99</CssParameter>
@@ -250,6 +250,14 @@
       <Filter>[tipo] = 'playa'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonPatternSymbolizer file="&symbols_dir;/beach.png" type="png" width="10" height="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'estacion'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#fff68f</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
     </Rule>
 </Style>
 
