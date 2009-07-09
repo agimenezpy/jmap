@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Map [
+ <!ENTITY dbparams SYSTEM "./postgis-params.en" >
+ <!ENTITY area SYSTEM "./area.xml" >
+ <!ENTITY via SYSTEM "./via.xml" >
+ <!ENTITY texto_via SYSTEM "./texto_via.xml" >
+ <!ENTITY via_case SYSTEM "./via_case.xml" >
+ <!ENTITY limite SYSTEM "./limite.xml" >
+ <!ENTITY lugar SYSTEM "./lugar.xml" >
+ <!ENTITY srs4326 "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" >
+ <!ENTITY srs900913 "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over" >
+ <!ENTITY symbols_dir "/home/agimenez/Desktop/jmawiki/jma/cartografia/symbols" >
+]>
+<Map bgcolor="#f2efe9" srs="&srs900913;">
+    &area;
+    &via;
+    &texto_via;
+    &via_case;
+    &limite;
+    &lugar;
+    
+    <Layer name="rio" status="on" srs="+proj=utm +datum=WGS84 +zone=21 +south">
+        <StyleName>agua</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">/home/agimenez/Desktop/mapas/shapefiles/nuevos/riop</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="ciudad" status="on" srs="&srs4326;">
+        <StyleName>ciudad</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select l.id, t.descripcion as tipo,the_geom
+             from limite_politico l
+             join tipo_limite t on t.id = l.tipo_id
+             where t.descripcion = 'ciudad') as ciudad
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="zona" status="on" srs="&srs4326;">
+        <StyleName>zona</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select l.id, t.descripcion as tipo,the_geom
+             from limite_politico l
+             join tipo_limite t on t.id = l.tipo_id
+             where t.descripcion = 'zona') as zona
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="area" status="on" srs="&srs4326;">
+        <StyleName>area</StyleName>
+        <Datasource>
+          &dbparams;
+          <Parameter name="table">
+            (select a.id, t.descripcion as tipo,the_geom,a.area
+             from area_interes a
+             join tipo_area_interes t on t.id = a.tipo_id
+             order by zorder,area(the_geom) desc) as area
+          </Parameter>
+        </Datasource>
+      </Layer>
+
+    <Layer name="via" status="on" srs="&srs4326;">
+        <StyleName>via_case</StyleName>
+        <StyleName>via</StyleName>
+        <StyleName>direccion</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select v.id,v.direccion,t.descripcion as tipo,the_geom
+             from via_trazo v
+             join tipo_via t on t.id = v.tipo_id
+             order by zorder, prioridad, id) as via
+            </Parameter>
+        </Datasource>
+    </Layer>
+    
+    <Layer name="barrio" status="on" srs="&srs4326;">
+        <StyleName>barrio</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select l.id, t.descripcion as tipo,the_geom
+             from limite_politico l
+             join tipo_limite t on t.id = l.tipo_id
+             where t.descripcion = 'barrio') as barrio
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="texto_via" status="on" srs="&srs4326;">
+        <StyleName>texto_via</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select v.id,v.abrev,t.descripcion as tipo,the_geom
+             from via_transito v
+             join tipo_via t on t.id = v.tipo_id
+             order by zorder desc, prioridad, id) as texto_via
+            </Parameter>
+        </Datasource>
+    </Layer>
+    
+    <Layer name="lugar" status="on" srs="&srs4326;" clear_label_cache='true'>
+        <StyleName>lugar</StyleName>
+        <StyleName>texto_lugar</StyleName>
+        <Datasource>
+          &dbparams;
+          <Parameter name="table">
+            (select p.id, t.descripcion as tipo,the_geom
+             from punto_interes p
+             join tipo_punto_interes t on t.id = p.tipo_id) as lugar
+          </Parameter>
+        </Datasource>
+   </Layer>
+    
+    <Layer name="texto_lugar" status="on" srs="&srs4326;" clear_label_cache='true'>
+        <StyleName>texto_lugar</StyleName>
+        <Datasource>
+          &dbparams;
+          <Parameter name="table">
+            (select p.id, p.nombre, t.descripcion as tipo,the_geom
+             from punto_interes p
+             join tipo_punto_interes t on t.id = p.tipo_id) as lugar
+          </Parameter>
+        </Datasource>
+   </Layer>
+    
+    <Layer name="texto_area" status="on" srs="&srs4326;" clear_label_cache='true'>
+        <StyleName>texto_area</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select a.id, a.nombre,t.descripcion as tipo,the_geom,a.area
+             from area_interes a
+             join tipo_area_interes t on t.id = a.tipo_id
+             order by zorder,area(the_geom) desc) as texto_area
+            </Parameter>
+        </Datasource>
+    </Layer>
+    
+    <Layer name="texto_limite" status="on" srs="&srs4326;" clear_label_cache='true' >
+        <StyleName>texto_limite</StyleName>
+        <Datasource>
+            &dbparams;
+            <Parameter name="table">
+            (select l.id, nombre, t.descripcion as tipo, centroid(the_geom) as the_geom
+             from limite_politico l
+             join tipo_limite t on t.id = l.tipo_id) as texto_limite
+            </Parameter>
+        </Datasource>
+    </Layer>
+</Map>

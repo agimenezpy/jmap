@@ -133,7 +133,7 @@ class PuntoInteres(models.Model):
     nombre = models.CharField(u"Nombre",max_length=90)
     zorder = models.IntegerField(u"Orden Z",default=0)
     tipo = models.ForeignKey(TipoPOI,verbose_name=u"Tipo de Punto")
-    wiki_id = models.CharField(u"WikiID",max_length=100,null=True)
+    wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
     the_geom = models.PointField(u"Geometría")
     objects = models.GeoManager()
     
