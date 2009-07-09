@@ -1,0 +1,99 @@
+<!-- A partir del ZOOM 9 -->
+<Style name="ciudad">
+    <Rule>
+        <MaxScaleDenominator>1000000</MaxScaleDenominator>
+        <PolygonSymbolizer>
+            <CssParameter name="fill">#F2EFE9</CssParameter>
+        </PolygonSymbolizer>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">1</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+</Style>
+<!-- ZOOM 11 y 12 -->
+<Style name="zona">
+    <Rule>
+        <MinScaleDenominator>108000</MinScaleDenominator>
+        <MaxScaleDenominator>433000</MaxScaleDenominator>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">1</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="barrio">
+    <!-- ZOOM 13 -->
+    <Rule>
+        <MinScaleDenominator>54000</MinScaleDenominator>
+        <MaxScaleDenominator>108000</MaxScaleDenominator>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">1</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+    <!-- ZOOM 14 y 15 -->
+    <Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <LineSymbolizer>
+            <CssParameter name="stroke">#B3A895</CssParameter>
+            <CssParameter name="stroke-width">1</CssParameter>
+            <CssParameter name="stroke-dasharray">3 10</CssParameter>
+        </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="texto_limite">
+    <!-- CIUDADES -->
+    <!-- ZOOM 9 al 12 -->
+    <Rule>
+        <MinScaleDenominator>433000</MinScaleDenominator>
+        <MaxScaleDenominator>1000000</MaxScaleDenominator>
+        <Filter>[tipo] = 'ciudad'</Filter>
+        <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000000" label_placement="1"  halo_radius="2" halo_fill="#FFFFFF" wrap_width="20"/>
+    </Rule>
+    <!-- ZONAS -->
+    <!-- ZOOM 11 y 12 -->
+    <Rule>
+        <MinScaleDenominator>108000</MinScaleDenominator>
+        <MaxScaleDenominator>433000</MaxScaleDenominator>
+        <Filter>[tipo] = 'zona'</Filter>
+        <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000000" label_placement="1"  halo_radius="2" halo_fill="#FFFFFF" wrap_width="20"/>
+    </Rule>
+    <!-- BARRIOS -->
+    <!-- ZOOM 13 -->
+    <Rule>
+        <MinScaleDenominator>54000</MinScaleDenominator>
+        <MaxScaleDenominator>108000</MaxScaleDenominator>
+        <Filter>[tipo] = 'barrio'</Filter>
+        <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="11" fill="#000000" label_placement="1"  halo_radius="2" halo_fill="#FFFFFF" wrap_width="15" allow_overlap="true"/>
+    </Rule>
+    <!-- ZOOM 14 y 15 -->
+    <Rule>
+        <MinScaleDenominator>27000</MinScaleDenominator>
+        <MaxScaleDenominator>54000</MaxScaleDenominator>
+        <Filter>[tipo] = 'barrio'</Filter>
+        <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="13" fill="#000000" label_placement="1"  halo_radius="2" halo_fill="#FFFFFF" wrap_width="20"/>
+    </Rule>
+    <Rule>
+        <MinScaleDenominator>14000</MinScaleDenominator>
+        <MaxScaleDenominator>27000</MaxScaleDenominator>
+        <Filter>[tipo] = 'barrio'</Filter>
+        <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="16" fill="#000000" label_placement="1"  halo_radius="2" halo_fill="#FFFFFF" wrap_width="20"/>
+    </Rule>
+</Style>
+<!-- ZOOM 13 -->
+<Style name="agua">
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b5d0d0</CssParameter>
+     </PolygonSymbolizer>
+     <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>

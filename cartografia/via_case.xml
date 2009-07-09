@@ -1,5 +1,5 @@
 <!-- ZOOM 14  -->
-<Style name="base">
+<Style name="via_case">
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
@@ -14,7 +14,7 @@
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#B3A895</CssParameter>
             <CssParameter name="stroke-width">8</CssParameter>
@@ -25,7 +25,7 @@
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'primaria' or [tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#AB7F47</CssParameter>
             <CssParameter name="stroke-width">10</CssParameter>
@@ -59,7 +59,7 @@
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#B3A895</CssParameter>
             <CssParameter name="stroke-width">10</CssParameter>
@@ -70,7 +70,7 @@
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'primaria' or [tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#AB7F47</CssParameter>
             <CssParameter name="stroke-width">12</CssParameter>
@@ -104,7 +104,7 @@
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#B3A895</CssParameter>
             <CssParameter name="stroke-width">12</CssParameter>
@@ -115,7 +115,7 @@
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'primaria' or [tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#AB7F47</CssParameter>
             <CssParameter name="stroke-width">14</CssParameter>
@@ -149,7 +149,7 @@
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#B3A895</CssParameter>
             <CssParameter name="stroke-width">16</CssParameter>
@@ -160,7 +160,7 @@
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'primaria' or [tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#AB7F47</CssParameter>
             <CssParameter name="stroke-width">18</CssParameter>
@@ -194,7 +194,7 @@
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#B3A895</CssParameter>
             <CssParameter name="stroke-width">25</CssParameter>
@@ -205,7 +205,7 @@
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario' or [tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'primaria' or [tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#AB7F47</CssParameter>
             <CssParameter name="stroke-width">27</CssParameter>
@@ -236,7 +236,7 @@
       </LineSymbolizer>
    </Rule-->
    <Rule>
-      <Filter>[tipo] = 'pedestrian'</Filter>
+      <Filter>[tipo] = 'pasaje'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -247,7 +247,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[tipo] = 'pedestrian'</Filter>
+      <Filter>[tipo] = 'pasaje'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>

@@ -1,0 +1,21 @@
+{% extends "gis/admin/openlayers.html" %}
+{% block openlayers %}
+OpenLayers.Util.onImageLoadError = function() {
+        this.src = "/media/images/404.png";
+}
+OpenLayers.ImgPath = '/media/images/';
+var opciones = {
+        isBaseLayer: true,
+        buffer: 0,
+        singleTile: true,
+        restrictedExtent: new OpenLayers.Bounds(
+                            -57.6714897155762,-25.3689365386963, -57.5250053405762, -25.2249450683594
+                        ),
+        attribution: '&copy;2009 SIG Municipal <img src="/media/images/copyright.gif" width="34">',
+        type: 'png',
+        displayOutsideMaxExtent: true,
+        numZoomLevels: 6,
+        maxResolution: 1.40625/Math.pow(2,12)
+    };
+{% include "gis/admin/jma.js" %}
+{% endblock %}

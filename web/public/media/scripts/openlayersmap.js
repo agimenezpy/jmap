@@ -85,7 +85,7 @@ function olay_load() {
         maxResolution: 156543.0339/Math.pow(2,12)
     };
     
-    var asu = new OpenLayers.Layer.TMS("Asuncion","http://mt0.mapas.org.py/masu/", options);
+    var asu = new OpenLayers.Layer.TMS("Asuncion","/masu/", options);
 
     map.addLayer(asu);
     map.restrictedExtent = map.baseLayer.restrictedExtent;

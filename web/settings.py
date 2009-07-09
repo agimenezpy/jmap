@@ -26,6 +26,7 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
 TIME_ZONE = 'America/Asuncion'
 DEFAULT_CHARSET='ISO-8859-1'
 FILE_CHARSET="ISO-8859-1"
+SESSION_ENGINE = "django.contrib.sessions.backends.file"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -49,7 +50,7 @@ MEDIA_URL = ''
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/admedia/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'i8=-4wat+b=-dn@pxoz&4a*gk7awa^4!i&^@%48lr0ce9&+j1r'
@@ -78,11 +79,19 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    #'django.contrib.auth',
-    #'django.contrib.contenttypes',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
     #'django.contrib.sessions',
     #'django.contrib.sites',
-    'web.geo'
+    'web.geo',
+    'web.tiles'
 )
 
 GOOGLE_MAPS_API_KEY = "ABQIAAAA2EhgZ1jVWk36csfuDTqSMRScZ9FFBPdIfs42p3375FIhFRQUIxRyAlTKkDfq3zQh_52s_D1M7jY22w&amp;hl=es"
+
+BASE_URL = "http://localhost"
+ROOT_PROJECT_FOLDER = "/home/agimenez/Desktop/jmawiki/jma/cartografia/"
+DISK_CACHE = "/tmp"
+MAPFILE_ROOT = ROOT_PROJECT_FOLDER
+MAPNIK_MAPFILE = MAPFILE_ROOT + '/asuncion.xml'
