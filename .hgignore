@@ -13,4 +13,5 @@ scripts/*.log
 scripts/*.dump
 *.gz
 cartografia/symbols/*
+cartografia/shapefiles/*
 cartografia/mapserver
