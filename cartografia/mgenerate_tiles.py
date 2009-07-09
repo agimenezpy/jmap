@@ -122,8 +122,9 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
 
 if __name__ == "__main__":
     bbox = (-57.7169297594,-25.3681289533,-57.4796143793,-25.2256887922)
+    #bbox = (-57.579761505127, -25.2358665466309,-57.5641288757324, -25.2253608703613)
     mapfile = "masuncion.xml"
-    tile_dir = "/var/www/mt0.mapas.org.py/jasu"
+    tile_dir = "/home/agimenez/"
 
     minZoom = 14
     maxZoom = 14
