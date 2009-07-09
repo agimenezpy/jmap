@@ -10,6 +10,7 @@ class TipoVia(models.Model):
 
     class Meta:
         db_table = "tipo_via"
+        verbose_name = "Tipo de Vias de Transito"
         verbose_name_plural = "Tipos de Vias de Transito"
         ordering = ["id"]
 
@@ -22,6 +23,7 @@ class TipoLimite(models.Model):
     
     class Meta:
         db_table = "tipo_limite"
+        verbose_name = u"Tipo de Límites Políticos"
         verbose_name_plural = u"Tipos de Límites Políticos"
         ordering = ["id"]
 
@@ -31,8 +33,8 @@ class Limite(models.Model):
     nombre = models.CharField(u"Nombre",max_length=60)
     zorder = models.IntegerField(u"Orden Z",default=0)
     tipo = models.ForeignKey(TipoLimite,verbose_name=u"Tipo de Límite")
-    parent = models.ForeignKey("self", verbose_name=u"Relacionado",null=True)
-    wiki_id = models.CharField(u"WikiID",max_length=100,null=True)
+    parent = models.ForeignKey("self", verbose_name=u"Relacionado",null=True,blank=True)
+    wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
     the_geom = models.PolygonField(u"Geometría")
     objects = models.GeoManager()
     
@@ -41,6 +43,7 @@ class Limite(models.Model):
     
     class Meta:
         db_table = "limite_politico"
+        verbose_name = u"Límite Político"
         verbose_name_plural = u"Límites Políticos"
         ordering = ["id"]
 
@@ -52,7 +55,7 @@ class Via(models.Model):
     zorder = models.IntegerField(u"Orden Z",default=0)
     prioridad = models.IntegerField(u"Número de Prioridad",default=0)
     the_geom = models.MultiLineStringField(u"Geometría")
-    wiki_id = models.CharField(u"WikiID",max_length=100,null=True)
+    wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
     objects = models.GeoManager()
 
     def __unicode__(self):
@@ -60,6 +63,7 @@ class Via(models.Model):
     
     class Meta:
         db_table = "via_transito"
+        verbose_name = "Via de Transito"
         verbose_name_plural = "Vias de Transito"
 
 class ViaTrazo(models.Model):
@@ -79,6 +83,7 @@ class ViaTrazo(models.Model):
     
     class Meta:
         db_table = "via_trazo"
+        verbose_name = "Trazo de Via"
         verbose_name_plural = "Trazos de Vias"
 
 class TipoAOI(models.Model):
@@ -90,6 +95,7 @@ class TipoAOI(models.Model):
     
     class Meta:
         db_table = "tipo_area_interes"
+        verbose_name = u"Tipo de Áreas de Interes"
         verbose_name_plural = u"Tipos de Áreas de Interes"
         ordering = ["id"]
 
@@ -98,7 +104,7 @@ class AreaInteres(models.Model):
     nombre = models.CharField(u"Nombre",max_length=60)
     zorder = models.IntegerField(u"Orden Z",default=0)
     tipo = models.ForeignKey(TipoAOI,verbose_name=u"Tipo de Área")
-    wiki_id = models.CharField(u"WikiID",max_length=100,null=True)
+    wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
     the_geom = models.PolygonField(u"Geometría")
     
     def __unicode__(self):
@@ -106,6 +112,7 @@ class AreaInteres(models.Model):
     
     class Meta:
         db_table = "area_interes"
+        verbose_name = u"Área de Interes"
         verbose_name_plural = u"Áreas de Interes"
 
 class TipoPOI(models.Model):
@@ -117,6 +124,7 @@ class TipoPOI(models.Model):
     
     class Meta:
         db_table = "tipo_punto_interes"
+        verbose_name = "Tipo de Puntos de Interes"
         verbose_name_plural = "Tipos de Puntos de Interes"
         ordering = ["id"]
 
@@ -134,4 +142,5 @@ class PuntoInteres(models.Model):
     
     class Meta:
         db_table = "punto_interes"
+        verbose_name = "Punto de Interes"
         verbose_name_plural = "Puntos de Interes"

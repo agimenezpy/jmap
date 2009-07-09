@@ -8,10 +8,21 @@ cur2 = db2.cursor()
 
 # plaza = xpath_string(attrs, '/attrs/landuse') = 'recreation_ground' and (name ~* 'plaza' or name ~* 'plazoleta')
 # parque = xpath_string(attrs, '/attrs/leisure') = 'park'
+# deporte = xpath_string(attrs, '/attrs/leisure') = 'sports_centre'
+# comercio = xpath_string(attrs, '/attrs/landuse') = 'retail'
+# universidad = xpath_string(attrs, '/attrs/amenity') = 'university'
+# estadio = xpath_string(attrs, '/attrs/leisure') = 'stadium'
+# comercial = xpath_string(attrs, '/attrs/landuse') = 'commercial'
+# hospital = xpath_string(attrs, '/attrs/amenity') = 'hospital'
+# terminal = xpath_string(attrs, '/attrs/building') = 'station'
+# edificio = xpath_string(attrs, '/attrs/building') = 'yes'
+# hipodromo = xpath_string(attrs, '/attrs/landuse') = 'recreation_ground' and not (name ~* 'plaza' or name ~* 'plazoleta')
+# cementerio = xpath_string(attrs, '/attrs/landuse') = 'cemetery'
+# estacion = xpath_string(attrs, '/attrs/railway') = 'station'
 sql1 = """
 select fid,name,z_order,transform(the_geom, 4326)
 from area_interes_old
-where xpath_string(attrs, '/attrs/leisure') = 'park'
+where xpath_string(attrs, '/attrs/railway') = 'station'
 """
 
 sql2a = """
@@ -19,7 +30,7 @@ insert into area_interes (nombre,zorder,tipo_id,the_geom) values (%s,%s,%s,%s)
 """
 
 sql2b = """
-select id from tipo_area_interes where descripcion = 'parque';
+select id from tipo_area_interes where descripcion = 'estacion';
 """
 
 cur1.execute(sql1)
