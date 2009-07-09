@@ -1,0 +1,180 @@
+<Style name="lugar">
+    <Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[tipo] = 'aeropuerto'</Filter>
+      <PointSymbolizer file = "&symbols_dir;/airport.png" type="png" width="14" height="11" />
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-10" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[tipo] = 'aeropuerto'</Filter>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[tipo] = 'aerodromo'</Filter>
+      <PointSymbolizer file = "&symbols_dir;/aerodrome.png" type="png" width="10" height="9" />
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Oblique" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[tipo] = 'aerodromo'</Filter>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Oblique" size="8" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tipo] = 'puesto de correo'</Filter>
+      <PointSymbolizer file="&symbols_dir;/post_box.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tipo] = 'atm'</Filter>
+      <PointSymbolizer file="&symbols_dir;/atm.png" type="png" width="25" height="11" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tipo] = 'oficina de correo'</Filter>
+      <PointSymbolizer file="&symbols_dir;/post_office.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <Filter>[tipo] = 'cruce de via'</Filter>
+      <PointSymbolizer file="&symbols_dir;/level_crossing.png" type="png" width="7" height="7" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'cruce de via'</Filter>
+      <PointSymbolizer file="&symbols_dir;/level_crossing2.png" type="png" width="11" height="11" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'pub'</Filter>
+      <PointSymbolizer file="&symbols_dir;/pint.png" type="png" width="12" height="18" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <Filter>[tipo] = 'cerro'</Filter>
+      <PointSymbolizer file="&symbols_dir;/peak.png" type="png" width="8" height="8" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tipo] = 'torre'</Filter>
+      <PointSymbolizer file="&symbols_dir;/tower.png" type="png" width="32" height="32" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+       <Filter>[tipo] = 'generador por viento'</Filter>
+      <PointSymbolizer file = "&symbols_dir;/power_wind.png" type="png" width="16" height="26" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'molino'</Filter>
+      <PointSymbolizer file = "&symbols_dir;/windmill.png" type="png" width="10" height="15" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'reciclaje'</Filter>
+      <PointSymbolizer file="&symbols_dir;/recycling.png" type="png" width="20" height="20" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'hospital'</Filter>
+      <PointSymbolizer file="&symbols_dir;/hospital.png" type="png" width="20" height="20" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tipo] = 'parada'</Filter>
+      <PointSymbolizer file="&symbols_dir;/bus_stop.png" type="png" width="30" height="12" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[tipo] = 'estacionamiento'</Filter>
+      <PointSymbolizer file="&symbols_dir;/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'templo cristiano'</Filter>
+      <PointSymbolizer file="&symbols_dir;/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'templo musulman'</Filter>
+      <PointSymbolizer file="&symbols_dir;/mosque.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'templo judio'</Filter>
+      <PointSymbolizer file="&symbols_dir;/synagogue.png" type="png" width="16" height="18" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'lugar de adoracion'</Filter>
+      <PointSymbolizer file="&symbols_dir;/place_of_worship3.png" type="png" width="10" height="10" allow_overlap="false"/>
+     </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'aeropuerto'</Filter>
+      <PointSymbolizer file="&symbols_dir;/airport.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[tipo] = 'rotonda'</Filter>
+      <PointSymbolizer file="&symbols_dir;/mini_round.png" type="png" width="9" height="9" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'porton'</Filter>
+      <PointSymbolizer file="&symbols_dir;/gate.png" type="png" width="4" height="5" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'servicentro'</Filter>
+      <PointSymbolizer file="&symbols_dir;/fuel_station.png" type="png" width="32" height="32" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tipo] = 'comisaria'</Filter>
+      <PointSymbolizer file="&symbols_dir;/police.png" type="png" width="24" height="29" allow_overlap="false"/>
+    </Rule>
+</Style>
+
+<Style name="texto_lugar">
+    <Rule>
+      <Filter>[tipo] = 'pub'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="10" fill="brown" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
+     <Rule>
+      <Filter>[tipo].match('templo.*') or [tipo] = 'comisaria'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="18" halo_radius="1" wrap_width="30"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'cerro'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="brown" dy="10" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'agua' or [tipo] = 'lago' or [tipo] = 'reserva'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'escuela' or [tipo] = 'colegio' or [tipo] = 'universidad'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'hospital'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="9" fill="#000033" dy="12" halo_radius="2" wrap_width="12"/>
+    </Rule>
+</Style>

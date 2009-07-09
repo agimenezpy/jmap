@@ -5,7 +5,7 @@ db2 = connect("host=localhost user=gisadm password=ge0spatial dbname=guiadigital
 cur2 = db2.cursor()
 
 sql1 = """
-select id from area_interes where tipo_id = '2' and to_tsvector('spanish', nombre) @@ to_tsquery('%s')
+select id from area_interes where tipo_id in ('2','3') and to_tsvector('spanish', nombre) @@ to_tsquery('%s')
 """
 
 sql2 = """

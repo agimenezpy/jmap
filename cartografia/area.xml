@@ -1,0 +1,282 @@
+<Style name="area">
+    <Rule>
+      <Filter>[tipo] = 'patio'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+        <CssParameter name="fill">#ccffff</CssParameter>
+     </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#666</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'reserva natural'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <PolygonPatternSymbolizer file="&symbols_dir;/nature_reserve.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'reserva natural'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="&symbols_dir;/nature_reserve2.png" type="png" width="42" height="48"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[tipo] = 'cementerio'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aacbaf</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[tipo] = 'residencial'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ddd</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[tipo] = 'cuartel militar'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ff8f8f</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[tipo] = 'cementerio'</Filter>
+      <PolygonPatternSymbolizer file="&symbols_dir;/grave_yard.png" type="png" width="16" height="16"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'parque'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b6fdb6</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'zoologico'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="&symbols_dir;/zoo.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'comun'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'jardin'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'bosque'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#8dc56c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'bosque'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="&symbols_dir;/forest.png" type="png" width="21" height="24"/>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'granja'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ead8bd</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'plaza'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'comercio'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f1dada</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'comercio'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">red</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'comercio'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ffaeb9</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'subestatica'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbb</CssParameter>
+     </PolygonSymbolizer>
+    <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'comercial'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#efc8c8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'universidad' or [tipo] = 'colegio' or [tipo] = 'escuela' or [tipo]='hospital'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f0f0d8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'universidad' or [tipo] = 'colegio' or [tipo] = 'escuela' or [tipo]='hospital'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">brown</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'estacionamiento'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#f7efb7</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'estacionamiento'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#eeeed1</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'terminal de bus'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#fff68f</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'supermercado'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">pink</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'edificio'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#cc9999</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'adoracion'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'adoracion'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#111</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[tipo] = 'centro deportivo' or [tipo]='estadio' or [tipo]='pista'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#33cc99</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'aeropuerto'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#cc99ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'aeropuerto'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#330066</CssParameter>
+        <CssParameter name="stroke-width">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'hangar'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#f0e0ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[tipo] = 'playa'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="&symbols_dir;/beach.png" type="png" width="10" height="10"/>
+    </Rule>
+</Style>
+
+<Style name="texto_area">
+    <Rule>
+      <Filter>[tipo] = 'militar'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[area] &gt;= 150000</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[area] &gt;= 30000 and [area] &lt; 150000</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[area] &gt;= 3000 and [area] &lt; 80000</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+    <Rule>
+      <Filter>[area] &lt; 3000</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="nombre" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20" dy="-8"/>
+    </Rule>
+</Style>

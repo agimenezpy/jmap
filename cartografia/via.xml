@@ -1,9 +1,9 @@
-<Style name="calle">
+<Style name="via">
     <!-- ZOOM 14  -->
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FFFFCC</CssParameter>
             <CssParameter name="stroke-width">7</CssParameter>
@@ -14,7 +14,7 @@
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
-        <Filter>[tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FDBF6F</CssParameter>
             <CssParameter name="stroke-width">8</CssParameter>
@@ -25,7 +25,7 @@
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario'</Filter>
+        <Filter>[tipo] = 'primaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#E46D71</CssParameter>
             <CssParameter name="stroke-width">8</CssParameter>
@@ -77,7 +77,7 @@
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FFFFCC</CssParameter>
             <CssParameter name="stroke-width">9</CssParameter>
@@ -88,7 +88,7 @@
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
-        <Filter>[tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FDBF6F</CssParameter>
             <CssParameter name="stroke-width">10</CssParameter>
@@ -99,7 +99,7 @@
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario'</Filter>
+        <Filter>[tipo] = 'primaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#E46D71</CssParameter>
             <CssParameter name="stroke-width">10</CssParameter>
@@ -145,7 +145,7 @@
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FFFFCC</CssParameter>
             <CssParameter name="stroke-width">11</CssParameter>
@@ -156,7 +156,7 @@
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
-        <Filter>[tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FDBF6F</CssParameter>
             <CssParameter name="stroke-width">12</CssParameter>
@@ -167,7 +167,7 @@
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario'</Filter>
+        <Filter>[tipo] = 'primaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#E46D71</CssParameter>
             <CssParameter name="stroke-width">12</CssParameter>
@@ -213,7 +213,7 @@
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FFFFCC</CssParameter>
             <CssParameter name="stroke-width">14</CssParameter>
@@ -224,7 +224,7 @@
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
-        <Filter>[tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FDBF6F</CssParameter>
             <CssParameter name="stroke-width">15</CssParameter>
@@ -235,7 +235,7 @@
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario'</Filter>
+        <Filter>[tipo] = 'primaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#E46D71</CssParameter>
             <CssParameter name="stroke-width">15</CssParameter>
@@ -281,7 +281,7 @@
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
-        <Filter>[tipo] = 'terciario'</Filter>
+        <Filter>[tipo] = 'terciaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FFFFCC</CssParameter>
             <CssParameter name="stroke-width">22</CssParameter>
@@ -292,7 +292,7 @@
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
-        <Filter>[tipo] = 'secundario'</Filter>
+        <Filter>[tipo] = 'secundaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#FDBF6F</CssParameter>
             <CssParameter name="stroke-width">23</CssParameter>
@@ -303,7 +303,7 @@
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
-        <Filter>[tipo] = 'primario'</Filter>
+        <Filter>[tipo] = 'primaria'</Filter>
         <LineSymbolizer>
             <CssParameter name="stroke">#E46D71</CssParameter>
             <CssParameter name="stroke-width">23</CssParameter>
@@ -346,7 +346,7 @@
         </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[tipo] = 'footway'</Filter>
+      <Filter>[tipo] = 'peatonal'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -375,7 +375,7 @@
       </LineSymbolizer>
     </Rule-->
     <Rule>
-      <Filter>[tipo] = 'pedestrian'</Filter>
+      <Filter>[tipo] = 'pasaje'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -386,13 +386,71 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[tipo] = 'pedestrian'</Filter>
+      <Filter>[tipo] = 'pasaje'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ededed</CssParameter>
         <CssParameter name="stroke-width">5.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
+<Style name="direccion">
+    <Rule>
+      <Filter>[direccion] = 1</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,9,153</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,2,154</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,1,155</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[direccion] = -1 </Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,13,9,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,14,2,158</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,15,1,158</CssParameter>
       </LineSymbolizer>
     </Rule>
 </Style>

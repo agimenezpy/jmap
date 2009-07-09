@@ -12,3 +12,5 @@ scripts/TXT/*
 scripts/*.log
 scripts/*.dump
 *.gz
+cartografia/symbols/*
+cartografia/mapserver
