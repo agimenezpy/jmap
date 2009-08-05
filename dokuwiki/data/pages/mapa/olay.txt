@@ -1,8 +1,10 @@
 ====== Mapa Interactivo de la Ciudad ======
 <html>
 <center>
+<div id="detalle" style="text-align: left"></div> 
+<div id="buscador" style="text-align: left"></div> 
 <div id="map"><div id="msg" style="color: gray; font-size: 1em; text-align: left">Cargando ...</div></div>
-<div id="detalle" style="text-align: justify"></div>
+<div id="toolbar"></div>
 <div id="stip" style="display: none;">
     <!--hr class="clear-contentunit"/-->
     <h1>Búsqueda Rápida</h1>

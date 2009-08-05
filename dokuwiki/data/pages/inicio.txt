@@ -1,0 +1,23 @@
+====== Bienvenido ======
+
+**¡Bienvenido a nuestro nuevo sitio!**. Este sitio es una herramienta útil donde podrá encontrar información visual de ubicación y textual sobre los antecedentes históricos de los espacios públicos de la ciudad de Asunción.
+
+===== Información de Ubicación =====
+
+Actualmente, el SIG (Sistema Informatizado Georeferenciado) municipal mantiene los
+planos de la ciudad de Asunción con información geográfica en formato digital. Esta
+información es utilizada para varios propósitos dentro de la [[http://www.mca.gov.py/|Municipalidad de Asunción]]. La información geográfica disponible se compone de datos sobre vías de tránsito, división
+política de la ciudad, plazas, parques y lugares de interés general.
+
+===== Información Textual sobre Antecedentes Históricos y Legales =====
+
+Paralelamente, el departamento de Archivos de la Junta Municipal mantiene los datos de
+antecedentes legales e históricos de los espacios públicos de la ciudad. Estos datos
+representan la sustentación legal de la existencia de los entes ubicados geográficamente
+dentro de la ciudad de Asunción.
+
+Este sitio web provee la integración de las dos fuentes de información, geográfica y textual,
+de manera a obtener un valor agregado de publicación de información concerniente a la
+comuna a través de las nuevas tecnologías de comunicación, como lo es Internet.
+
+~~NOTOC~~

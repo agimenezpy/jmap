@@ -1,0 +1,101 @@
+====== Búsqueda de vías de tránsito ======
+
+<html>
+<form action="via.xhr" method="post" onsubmit="return buscar_calle(this);">
+<div id="form_calle" class="form">
+    <table width="100%">
+    <tr><td align="right"><b>Nombre de calle:</b></td>
+        <td align="left"><input class="edit" name="nombre" type="text" maxsize="50" /></td></tr>
+    <tr><td align="right"><b>Intersección (opcional):</b></td>
+        <td align="left"><input class="edit" name="entre" type="text" maxsize="50" /></td></tr>
+    <tr><td align="right"><b>Barrio:</b></td>
+        <td align="left"><select id="barrios" name="barrio" class="edit" onclick="$('zonas').options[0].selected = true">
+                <option value="-1">Cualquiera
+                <option value="1">Botánico
+                <option value="2">Santa Rosa
+                <option value="3">Virgen de Fátima
+                <option value="4">Santísima Trinidad
+                <option value="5">Mbocayaty
+                <option value="6">Tablada Nueva
+                <option value="7">Mburucuya
+                <option value="8">Virgen de la Asunción
+                <option value="9">Cañada del Ybyray
+                <option value="10">Madame Lynch
+                <option value="11">Salvador del Mundo
+                <option value="12">Jara
+                <option value="13">Virgen del Huerto
+                <option value="14">Las Lomas
+                <option value="15">Santo Domingo
+                <option value="16">Las Mercedes
+                <option value="17">Dr. Francia
+                <option value="18">San Jorge
+                <option value="19">Encarnación
+                <option value="20">San Antonio
+                <option value="21">Manorá
+                <option value="22">Ita Pyta Punta
+                <option value="23">Mcal. López
+                <option value="24">Ycua Sati
+                <option value="25">San Roque
+                <option value="26">Villa Morra
+                <option value="27">Recoleta
+                <option value="28">San Cristóbal
+                <option value="29">Ciudad Nueva
+                <option value="30">Gral. Díaz
+                <option value="31">Pettirossi
+                <option value="32">Mburicaó
+                <option value="33">Bernardino Caballero
+                <option value="34">Luis A. de Herrera
+                <option value="35">Obrero
+                <option value="36">Mcal. Estigarribia
+                <option value="37">Pinozá
+                <option value="38">Tembetary
+                <option value="39">Los Laureles
+                <option value="40">Hipódromo
+                <option value="41">Zeballos Cue
+                <option value="42">De la Residenta
+                <option value="43">Ñu Guazú
+                <option value="44">Ytay
+                <option value="45">Santa María
+                <option value="46">Villa Aurelia
+                <option value="47">San Vicente
+                <option value="48">Vista Alegre
+                <option value="49">Nazareth
+                <option value="50">San Pablo
+                <option value="51">Terminal
+                <option value="52">Sajonia
+                <option value="53">Carlos Antonio López
+                <option value="54">Tacumbú
+                <option value="55">Roberto L. Petit
+                <option value="56">Republicano
+                <option value="57">Ita Enramada
+                <option value="58">Bella Vista
+                <option value="59">Catedral
+                <option value="60">Bañado Cara Cará
+                <option value="61">Santa Ana
+                <option value="62">Bañado
+                <option value="63">Banco San Miguel
+                <option value="64">Loma Pyta
+                <option value="65">San Blas
+                <option value="66">Ricardo Brugada
+           </select></td></tr>
+    <tr><td align="right"><b>Distrito:</b></td>
+        <td align="left"><select id="zonas" name="zona" class="edit" onclick="$('barrios').options[0].selected = true">
+                <option value="-1">Cualquiera
+                <option value="10">La Encarnación
+                <option value="11">La Catedral
+                <option value="12">San Roque
+                <option value="13">Zona 13
+                <option value="14">La Recoleta
+                <option value="15">Santísima Trinidad
+           </select></td></tr>
+     <tr align="center"><td colspan="2"><input class="button" name="commit" type="submit" value="Encontrar" /></td></tr>
+     </table>
+</div>
+</form>
+
+<div id="progreso" style="display:none;"><img alt="Busybar" src="/media/images/busybar.gif" /></div>
+<div id="calle_search_results">
+    <div id="calle_results"></div>
+    <div id="calle_notice"></div>
+</div>
+</html>

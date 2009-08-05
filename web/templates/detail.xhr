@@ -1,3 +1,0 @@
-{% if item %}
-map.openInfoWindowTabsHtml(map.getCenter(), [new GInfoWindowTab('Detalle', '<b>{{ item.nombre }}</b>. {{ item.ref }}'), new GInfoWindowTab('Descripción', '<p>{{ item.descripcion }}</p>'), new GInfoWindowTab('Ubicación', '{{ item.ubicacion }}')], {maxContent: 100})
-{% endif %}

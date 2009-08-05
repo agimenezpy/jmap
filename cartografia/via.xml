@@ -71,7 +71,7 @@
       <MinScaleDenominator>1693</MinScaleDenominator>
       <MaxScaleDenominator>54000</MaxScaleDenominator>
       <Filter>[tipo] = 'ferrea'</Filter>
-      <LinePatternSymbolizer file="/home/agimenez/Desktop/mapas/symbols/rail.png" type="png" width="20" height="3" />
+      <LinePatternSymbolizer file="&symbols_dir;/rail.png" type="png" width="20" height="3" />
     </Rule>
     <!-- ZOOM 15  -->
     <Rule>

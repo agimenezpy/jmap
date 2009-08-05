@@ -3,5 +3,5 @@
 <Parameter name="port">5432</Parameter>
 <Parameter name="user">gisadm</Parameter>
 <Parameter name="password">ge0spatial</Parameter>
-<Parameter name="dbname">guiadigital</Parameter>
+<Parameter name="dbname">asuncion</Parameter>
 <Parameter name="estimate_extent">false</Parameter>

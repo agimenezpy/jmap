@@ -12,7 +12,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'guiadigital'             # Or path to database file if using sqlite3.
+DATABASE_NAME = 'asuncion'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'gisadm'             # Not used with sqlite3.
 DATABASE_PASSWORD = 'ge0spatial'         # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
@@ -91,7 +91,7 @@ INSTALLED_APPS = (
 GOOGLE_MAPS_API_KEY = "ABQIAAAA2EhgZ1jVWk36csfuDTqSMRScZ9FFBPdIfs42p3375FIhFRQUIxRyAlTKkDfq3zQh_52s_D1M7jY22w&amp;hl=es"
 
 BASE_URL = "http://localhost"
-ROOT_PROJECT_FOLDER = "/home/agimenez/Desktop/jmawiki/jma/cartografia/"
+ROOT_PROJECT_FOLDER = "/home/agimenez/Desktop/ProyectoWeb/jmawiki/jma/cartografia/"
 DISK_CACHE = "/tmp"
 MAPFILE_ROOT = ROOT_PROJECT_FOLDER
 MAPNIK_MAPFILE = MAPFILE_ROOT + '/asuncion.xml'
