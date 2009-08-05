@@ -1,11 +1,11 @@
 {% if resultado %}
-$('results').update("<h5>Resultados de la búsqueda</h5>" +
+$('{{ search_type }}results').update("<h5>Resultados de la búsqueda</h5>" +
 {% for row in items %}
-"<a class='wikilink1' style='cursor: pointer;' onclick='javascript:addGPolyline({{ row.id }}, \"{{ row.wiki_id }}\", {{ row.the_geom.geojson }}, {{ row.the_geom.extent.0 }}, {{ row.the_geom.extent.1 }}, {{ row.the_geom.extent.2 }}, {{ row.the_geom.extent.3 }})'>{{ row.abrev }}</a><br>" +
+"<a class='wikilink1' style='cursor: pointer;' onclick='javascript:markFeature({{ row.id }}, \"{{ row.wiki_id }}\", {{ row.the_geom.geojson }}, {{ row.the_geom.extent.0 }}, {{ row.the_geom.extent.1 }}, {{ row.the_geom.extent.2 }}, {{ row.the_geom.extent.3 }})'>{{ row.abrev }}</a><br>" +
 {% endfor %}
 "<hr class='clear-contentunit'/>");
 {% endif %}
-$("notice").update("{{ count }} Resultados Disponibles");
-$("search_results").show();
-Element.scrollTo($('search_results'));
-new Effect.Highlight("results",{});
+$("{{ search_type }}notice").update("{{ count }} Resultados Disponibles");
+$("{{ search_type }}search_results").show();
+Element.scrollTo($('{{ search_type }}search_results'));
+new Effect.Highlight("{{ search_type }}results",{});

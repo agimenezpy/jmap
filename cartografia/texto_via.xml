@@ -4,123 +4,123 @@
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
         <Filter>[tipo] = 'terciaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="50"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="50" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
         <Filter>[tipo] = 'secundaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="50"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="50" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
         <Filter>[tipo] = 'primaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="50"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="10" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="50" max_char_angle_delta="90"/>
     </Rule>
-    <Rule>
+    <!--Rule>
         <MinScaleDenominator>27000</MinScaleDenominator>
         <MaxScaleDenominator>54000</MaxScaleDenominator>
         <ElseFilter/>
-    </Rule>
+    </Rule-->
     <!-- ZOOM 15  -->
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
         <Filter>[tipo] = 'terciaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="100"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="100" mmax_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
         <Filter>[tipo] = 'secundaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="100"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="100" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
         <Filter>[tipo] = 'primaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="100"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="100" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>14000</MinScaleDenominator>
         <MaxScaleDenominator>27000</MaxScaleDenominator>
         <ElseFilter/>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="9" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FFFFFF" spacing="50"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="9" fill="#000000" placement="line" halo_radius="1" halo_fill="#FFFFFF" spacing="50" max_char_angle_delta="90"/>
     </Rule>
     <!-- ZOOM 16  -->
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
         <Filter>[tipo] = 'terciaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="150"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="150" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
         <Filter>[tipo] = 'secundaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="150"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FDBF6F" spacing="150" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
         <Filter>[tipo] = 'primaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="150"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="12" fill="#000000" placement="line"  halo_radius="1" halo_fill="#E46D71" spacing="150" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>6771</MinScaleDenominator>
         <MaxScaleDenominator>14000</MaxScaleDenominator>
         <ElseFilter/>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line"  halo_radius="1" halo_fill="#FFFFFF" spacing="100"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="11" fill="#000000" placement="line" halo_radius="1" halo_fill="#FFFFFF" spacing="100" max_char_angle_delta="90"/>
     </Rule>
     <!-- ZOOM 17  -->
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
         <Filter>[tipo] = 'terciaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="200"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="200" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
         <Filter>[tipo] = 'secundaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FDBF6F" spacing="200"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FDBF6F" spacing="200" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
         <Filter>[tipo] = 'primaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#E46D71" spacing="200"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#E46D71" spacing="200" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>3385</MinScaleDenominator>
         <MaxScaleDenominator>6771</MaxScaleDenominator>
         <ElseFilter/>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FFFFFF" spacing="150"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FFFFFF" spacing="150" max_char_angle_delta="90"/>
     </Rule>
     <!-- ZOOM 18  -->
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
         <Filter>[tipo] = 'terciaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="450"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="1" halo_fill="#F7F496" spacing="450" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
         <Filter>[tipo] = 'secundaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FDBF6F" spacing="450"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FDBF6F" spacing="450" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
         <Filter>[tipo] = 'primaria'</Filter>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#E46D71" spacing="450"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#E46D71" spacing="450" max_char_angle_delta="90"/>
     </Rule>
     <Rule>
         <MinScaleDenominator>1693</MinScaleDenominator>
         <MaxScaleDenominator>3385</MaxScaleDenominator>
         <ElseFilter/>
-        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FFFFFF" spacing="300"/>
+        <TextSymbolizer name="abrev" face_name="DejaVu Sans Book" size="13" fill="#000000" placement="line"  halo_radius="2" halo_fill="#FFFFFF" spacing="300" max_char_angle_delta="90"/>
     </Rule>
 </Style>

@@ -2,9 +2,10 @@ var map;
 
 var overlays = {};
 var anyoverlay = false;
-var geoParser
+var geoParser;
+var wktParser;
 
-function goSearch(obj) {
+function goSearch(form) {
   var obj = new Ajax.Request('search.xhr',
             {method:'post',
             asynchronous:true,
@@ -12,11 +13,12 @@ function goSearch(obj) {
             encoding: 'ISO-8859-1',
             onComplete:function(request){OpenLayers.Element.hide('progress')},
             onLoading:function(request){OpenLayers.Element.hide('search_results');OpenLayers.Element.show('progress');},
-            parameters:Form.serialize(obj)});
+            parameters:Form.serialize(form)});
   return false;
 }
 
-function addGPolyline(id, detalle, points, xsw, ysw, xne, yne) {
+function markFeature(id, detalle, wktFeature, xsw, ysw, xne, yne) {
+    wgtBuscador.hide();
     if (anyoverlay) {
         map.layers[1].destroyFeatures();
         map.layers[2].clearMarkers();
@@ -25,7 +27,7 @@ function addGPolyline(id, detalle, points, xsw, ysw, xne, yne) {
     if (!overlays[id]) {
         var sw = new OpenLayers.LonLat(xsw, ysw).transform(map.displayProjection, map.projection);
         var ne = new OpenLayers.LonLat(xne, yne).transform(map.displayProjection, map.projection);
-        var geom = geoParser.read(points);
+        var geom = geoParser.read(wktFeature);
         var bounds = new OpenLayers.Bounds(sw.lon, sw.lat, ne.lon, ne.lat);
         overlays[id] = [geom, bounds];
         anyoverlay = true;
@@ -46,13 +48,23 @@ function addGPolyline(id, detalle, points, xsw, ysw, xne, yne) {
     $('map').scrollTo();
     
     if (detalle && detalle != "None") {
-        var obj = new Ajax.Updater('detalle', 'doku.php',
+        $('toolbar').update('Cargando Detalles <img src="/media/images/busybar.gif" alt="Busybar"/>')
+        $('toolbar').show();
+        var obj = new Ajax.Request('doku.php',
             {method:'get',
             asynchronous:true,
-            parameters:{'id': detalle, 'do':'export_xhtmlbody'}});
+            parameters:{'id': detalle, 'do':'export_xhtmlbody'},
+            onFailure:function(request){ $('toolbar').hide() },
+            onSuccess: function(request){
+                $('toolbar').update("Contiene Información Adicional <a id='showme' onclick=\"wgtDetalle.show()\" href='javascript:void(0)'>Mostrar</a>");
+                new Effect.Highlight("toolbar",{});
+                wgtDetalle.setBody("<center><a id='awiki' target='_blank' href='doku.php?id=" + detalle + "'>Ver en otra ventana</a></center><div class='detalle'>" + request.responseText + "</div>");
+              }
+            });
     }
     else {
-        $('detalle').update("");
+        $('toolbar').hide();
+        $('toolbar').update("");
     }
 }
 
@@ -104,7 +116,18 @@ function olay_load() {
     OpenLayers.Util.extend(control, {
         draw: function () {
             this.point = new OpenLayers.Handler.Point( control,
-                {"done": function(evt) { alert(evt) }});
+                {"done": function(evt) {
+                  var geom = wktParser.read(evt);
+                  var obj = new Ajax.Request('querybypoint.xhr',
+                            {method:'get',
+                            asynchronous:true,
+                            parameters:{'point': geom.geometry.toString(), 'zoom': map.getZoom()},
+                            onSuccess: function(request){
+                                wgtBuscador.setBody("<div class='detalle'>" + request.responseText + "</div>");
+                                wgtBuscador.show()
+                              }
+                            });
+                }});
         }
     });
     
@@ -149,6 +172,8 @@ function olay_load() {
     var boxes  = new OpenLayers.Layer.Boxes("Boxes");
     map.addLayer(boxes);
     geoParser = new OpenLayers.Format.GeoJSON({externalProjection: map.displayProjection, internalProjection: map.projection});
+    wktParser = new OpenLayers.Format.WKT({externalProjection: map.projection, internalProjection: map.displayProjection});
+    create_widgets();
 }
 
 function osm_getTileURL(bounds) {

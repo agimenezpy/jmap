@@ -1,3 +1,13 @@
+====== Herramientas ======
+<html>
+<ul>
+   <li><a onclick="mostrar_buscador('lugares')" href="javascript:void(0)">Buscar Lugares</a></li>
+   <li><a onclick="mostrar_buscador('espacios')" href="javascript:void(0)">Buscar Espacios Públicos</a></li>
+   <li><a onclick="mostrar_buscador('limites')" href="javascript:void(0)">Buscar Límites Políticos</a></li>
+   <li><a onclick="mostrar_buscador('calles')" href="javascript:void(0)">Buscar Calles</a></li>
+</ul>
+</html>
+
 ====== Búsqueda Rápida ======
 <html>
 <form action="search.xhr" method="post" onsubmit="return goSearch(this);">
@@ -5,7 +15,7 @@
     <input class="edit" id="query" name="query" type="text" />
     <input id="searchbutton" class="button" name="commit" type="submit" value="Encontrar" />
 
-    <a id="help" onclick="$('map').scrollTo(); $('stip').show()"  href="javascript:void(0)"><img alt="Tip" border="0" src="/images/tip.gif" /></a>
+    <a id="help" onclick="$('map').scrollTo(); $('stip').show()"  href="javascript:void(0)"><img alt="Tip" border="0" src="/media/images/tip.gif" /></a>
 </div>
 </form>
 

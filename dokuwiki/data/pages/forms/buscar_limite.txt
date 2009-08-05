@@ -1,0 +1,25 @@
+====== Búsqueda de límites de políticos ======
+
+<html>
+<form action="limite.xhr" method="post" onsubmit="return buscar_limite(this);">
+<div id="form_limite" class="form">
+    <table width="100%">
+    <tr><td align="right"><b>Nombre del límite:</b></td>
+        <td align="left"><input class="edit" name="nombre" type="text" maxsize="50" /></td></tr>
+    <tr><td align="right"><b>Tipo de límite:</b></td>
+        <td align="left"><select name="tipo" class="edit">
+               <option value="any">Cualquiera</option>
+               <option value="barrio">Barrio</option>
+              <option value="zona">Zona</option>
+           </select></td></tr>
+     <tr align="center"><td colspan="2"><input class="button" name="commit" type="submit" value="Encontrar" /></td></tr>
+     </table>
+</div>
+</form>
+
+<div id="progreso" style="display:none;"><img alt="Busybar" src="/media/images/busybar.gif" /></div>
+<div id="limite_search_results">
+    <div id="limite_results"></div>
+    <div id="limite_notice"></div>
+</div>
+</html>

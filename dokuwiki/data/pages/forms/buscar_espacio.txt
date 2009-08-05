@@ -1,0 +1,30 @@
+====== Búsqueda de espacios de interés ======
+
+<html>
+<form action="espacio.xhr" method="post" onsubmit="return buscar_espacio(this);">
+<div id="form_espacio" class="form" style="text-align: left">
+    <table width="100%">
+      <tr>
+      <td align="right"><b>Nombre del Espacio: </b></td> 
+      <td align="left"><input class="edit" name="nombre" type="text" /></td>
+      </tr>
+      <tr>
+      <td align="right"><b>Tipo de Espacio: </b></td>
+      <td align="left"><select name="tipo" class="edit">
+        <option value="any">Cualquiera</option>
+        <option value="plaza">Plazas</option>
+        <option value="parque">Parques</option>
+        <option value="cementerio">Cementerios</option>
+      </select></td>
+      </tr>
+      <tr align="center"><td colspan="2"><input class="button" name="commit" type="submit" value="Encontrar" /></td></tr>
+     </table>
+</div>
+</form>
+
+<div id="progreso" style="display:none;"><img alt="Busybar" src="/media/images/busybar.gif" /></div>
+<div id="espacio_search_results">
+    <div id="espacio_results"></div>
+    <div id="espacio_notice"></div>
+</div>
+</html>

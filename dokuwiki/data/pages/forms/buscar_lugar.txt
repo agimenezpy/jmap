@@ -1,0 +1,25 @@
+====== Búsqueda de lugares de interés ======
+
+<html>
+<form action="lugar.xhr" method="post" onsubmit="return buscar_lugar(this);">
+<div id="form_lugar" class="form">
+    <table width="100%">
+    <tr><td align="right"><b>Nombre del Lugar: </b></td>
+        <td align="left"><input class="edit" name="nombre" type="text" /></td></tr>
+    <tr><td align="right"><b>Tipo de Lugar: </b></td>
+        <td align="left"><select name="tipo" class="edit">
+              <option value="any">Cualquiera</option>
+              <option value="comisaria">Comisarias</option>
+              <option value="hospital">Hospitales</option>
+             </select></td></tr>
+    <tr align="center"><td colspan="2"><input class="button" name="commit" type="submit" value="Encontrar" /></td></tr>
+    </table>
+</div>
+</form>
+
+<div id="progreso" style="display:none;"><img alt="Busybar" src="/media/images/busybar.gif" /></div>
+<div id="lugar_search_results">
+    <div id="lugar_results"></div>
+    <div id="lugar_notice"></div>
+</div>
+</html>

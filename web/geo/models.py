@@ -3,7 +3,8 @@ from django.contrib.gis.db import models
 
 class TipoVia(models.Model):
     id = models.AutoField(primary_key=True)
-    descripcion = models.CharField(u"Descripción",max_length=40)
+    clave = models.CharField(u"Clave",max_length=40)
+    descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
         return "[%d] %s" % (self.id, self.descripcion)
@@ -16,7 +17,8 @@ class TipoVia(models.Model):
 
 class TipoLimite(models.Model):
     id = models.AutoField(primary_key=True)
-    descripcion = models.CharField(u"Descripción",max_length=40)
+    clave = models.CharField(u"Clave",max_length=40)
+    descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
         return "[%d] %s"  % (self.id, self.descripcion)
@@ -54,8 +56,8 @@ class Via(models.Model):
     tipo = models.ForeignKey(TipoVia, verbose_name=u"Tipo de Vía")
     zorder = models.IntegerField(u"Orden Z",default=0)
     prioridad = models.IntegerField(u"Número de Prioridad",default=0)
-    the_geom = models.MultiLineStringField(u"Geometría")
     wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
+    the_geom = models.MultiLineStringField(u"Geometría")
     objects = models.GeoManager()
 
     def __unicode__(self):
@@ -88,7 +90,8 @@ class ViaTrazo(models.Model):
 
 class TipoAOI(models.Model):
     id = models.AutoField(primary_key=True)
-    descripcion = models.CharField(u"Descripción",max_length=40)
+    clave = models.CharField(u"Clave",max_length=40)
+    descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
         return "[%d] %s" % (self.id, self.descripcion)
@@ -104,8 +107,10 @@ class AreaInteres(models.Model):
     nombre = models.CharField(u"Nombre",max_length=60)
     zorder = models.IntegerField(u"Orden Z",default=0)
     tipo = models.ForeignKey(TipoAOI,verbose_name=u"Tipo de Área")
+    area = models.IntegerField(u"Área",default=0)
     wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
     the_geom = models.PolygonField(u"Geometría")
+    objects = models.GeoManager()
     
     def __unicode__(self):
         return "[%d] %s" % (self.id, self.nombre)
@@ -117,7 +122,8 @@ class AreaInteres(models.Model):
 
 class TipoPOI(models.Model):
     id = models.AutoField(primary_key=True)
-    descripcion = models.CharField(u"Descripción",max_length=40)
+    clave = models.CharField(u"Clave",max_length=40)
+    descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
         return "[%d] %s" % (self.id, self.descripcion)

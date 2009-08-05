@@ -50,6 +50,26 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
             "_data" => "",
             "src" => DOKU_BASE."media/scripts/effects.js"
             );
+    $event->data["script"][] = array ("type" => "text/javascript",
+            "charset" => "utf-8",
+            "_data" => "",
+            "src" => DOKU_BASE."media/scripts/yahoo-dom-event.js"
+            );
+    $event->data["script"][] = array ("type" => "text/javascript",
+            "charset" => "utf-8",
+            "_data" => "",
+            "src" => DOKU_BASE."media/scripts/container-min.js"
+            );
+    $event->data["script"][] = array ("type" => "text/javascript",
+            "charset" => "utf-8",
+            "_data" => "",
+            "src" => DOKU_BASE."media/scripts/widgets.js"
+            );
+    $event->data["link"][] = array (
+            "type" => "text/css",
+            "rel" => "stylesheet", 
+            "href" => DOKU_BASE."media/styles/assets/container.css",
+          );
     if ($ID == "mapa:gmap") {
         $apikey = $this->getConf('gmapapikey');
         $event->data["script"][] = array ("type" => "text/javascript",

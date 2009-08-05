@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import sys, os
 
-sys.path.insert(0, "/home/agimenez/Desktop/jmawiki/jma/")
+sys.path.insert(0, "/home/agimenez/Desktop/ProyectoWeb/jmawiki/jma/")
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "web.settings"
 
