@@ -95,3 +95,5 @@ ROOT_PROJECT_FOLDER = "/home/agimenez/Desktop/ProyectoWeb/jmawiki/jma/cartografi
 DISK_CACHE = "/tmp"
 MAPFILE_ROOT = ROOT_PROJECT_FOLDER
 MAPNIK_MAPFILE = MAPFILE_ROOT + '/asuncion.xml'
+TILE_DIR = "/home/agimenez/Desktop/ProyectoWeb/jmawiki/public/masu/"
+TILE_MAPFILE = MAPFILE_ROOT + '/masuncion.xml'

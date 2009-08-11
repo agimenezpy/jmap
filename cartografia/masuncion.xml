@@ -32,10 +32,10 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select l.id, t.descripcion as tipo,the_geom
+            (select l.id, t.clave as tipo,the_geom
              from limite_politico l
              join tipo_limite t on t.id = l.tipo_id
-             where t.descripcion = 'ciudad') as ciudad
+             where t.clave = 'ciudad') as ciudad
             </Parameter>
         </Datasource>
     </Layer>
@@ -45,10 +45,10 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select l.id, t.descripcion as tipo,the_geom
+            (select l.id, t.clave as tipo,the_geom
              from limite_politico l
              join tipo_limite t on t.id = l.tipo_id
-             where t.descripcion = 'zona') as zona
+             where t.clave = 'zona') as zona
             </Parameter>
         </Datasource>
     </Layer>
@@ -58,7 +58,7 @@
         <Datasource>
           &dbparams;
           <Parameter name="table">
-            (select a.id, t.descripcion as tipo,the_geom,a.area
+            (select a.id, t.clave as tipo,the_geom,a.area
              from area_interes a
              join tipo_area_interes t on t.id = a.tipo_id
              order by zorder,area(the_geom) desc) as area
@@ -73,7 +73,7 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select v.id,v.direccion,t.descripcion as tipo,the_geom
+            (select v.id,v.direccion,t.clave as tipo,the_geom
              from via_trazo v
              join tipo_via t on t.id = v.tipo_id
              order by zorder, prioridad, id) as via
@@ -86,10 +86,10 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select l.id, t.descripcion as tipo,the_geom
+            (select l.id, t.clave as tipo,the_geom
              from limite_politico l
              join tipo_limite t on t.id = l.tipo_id
-             where t.descripcion = 'barrio') as barrio
+             where t.clave = 'barrio') as barrio
             </Parameter>
         </Datasource>
     </Layer>
@@ -99,7 +99,7 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select v.id,v.abrev,t.descripcion as tipo,the_geom
+            (select v.id,v.abrev,t.clave as tipo,the_geom
              from via_transito v
              join tipo_via t on t.id = v.tipo_id
              order by zorder desc, prioridad, id) as texto_via
@@ -113,7 +113,7 @@
         <Datasource>
           &dbparams;
           <Parameter name="table">
-            (select p.id, t.descripcion as tipo,the_geom
+            (select p.id, t.clave as tipo,the_geom
              from punto_interes p
              join tipo_punto_interes t on t.id = p.tipo_id) as lugar
           </Parameter>
@@ -125,7 +125,7 @@
         <Datasource>
           &dbparams;
           <Parameter name="table">
-            (select p.id, p.nombre, t.descripcion as tipo,the_geom
+            (select p.id, p.nombre, t.clave as tipo,the_geom
              from punto_interes p
              join tipo_punto_interes t on t.id = p.tipo_id) as lugar
           </Parameter>
@@ -137,7 +137,7 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select a.id, a.nombre,t.descripcion as tipo,the_geom,a.area
+            (select a.id, a.nombre,t.clave as tipo,the_geom,a.area
              from area_interes a
              join tipo_area_interes t on t.id = a.tipo_id
              order by zorder,area(the_geom) desc) as texto_area
@@ -150,7 +150,7 @@
         <Datasource>
             &dbparams;
             <Parameter name="table">
-            (select l.id, nombre, t.descripcion as tipo, centroid(the_geom) as the_geom
+            (select l.id, nombre, t.clave as tipo, centroid(the_geom) as the_geom
              from limite_politico l
              join tipo_limite t on t.id = l.tipo_id) as texto_limite
             </Parameter>

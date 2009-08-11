@@ -11,6 +11,7 @@ class ClaseBase:
     wms_url = '/wms/mapnik'
     wms_layer = 'default'
     map_template = 'gis/admin/jma.html'
+    render_url = "render.xhr"
     
     def wiki_link(self, obj):
         if obj.wiki_id:
@@ -19,6 +20,11 @@ class ClaseBase:
             return u"N/D"
     wiki_link.short_description = u"WikiID"
     wiki_link.allow_tags = True
+    
+    def link_render(self, obj):
+        return "<a id='render_%s' href='/%s?id=%d' onclick='return showAddAnotherPopup(this);'>Dibujar Mapa</a>" % (obj.id, self.render_url, obj.id)
+    link_render.short_description = u"Renderizado"
+    link_render.allow_tags = True
 
 class TipoViaAdmin(admin.ModelAdmin):
     list_per_page = 15
@@ -45,14 +51,14 @@ class LimiteAdmin(ClaseBase,admingis.GeoModelAdmin):
             'fields' : ('the_geom',)
         })
     )
-    
-    
 
 class ViaAdmin(ClaseBase,admingis.GeoModelAdmin):
     list_per_page = 15
-    list_display = ['id', 'nombre', 'abrev', 'tipo', 'wiki_link']
+    list_display = ['id', 'nombre', 'abrev', 'tipo', 'wiki_link', 'link_render']
     list_filter = ['tipo']
     search_fields = ['nombre']
+    exclude = ["the_geom"]
+    render_url = "render_via.xhr"
     
     fieldsets = (
         (None, {
@@ -60,9 +66,6 @@ class ViaAdmin(ClaseBase,admingis.GeoModelAdmin):
         }),
         (u'Publicación', {
             'fields' : ('wiki_id','zorder', 'prioridad')
-        }),
-        (u'Ubicación Geográfica', {
-            'fields' : ('the_geom',)
         })
     )
 
@@ -70,7 +73,7 @@ class ViaTrazoAdmin(ClaseBase,admingis.GeoModelAdmin):
     list_display = ['id', 'ref', 'tipo', 'direccion', 'num_ini', 'num_fin']
     list_filter = ['tipo']
     list_per_page = 15
-    search_fields = ['ref__nombre']
+    search_fields = ['id','ref__nombre']
     raw_id_fields = ['ref']
     
     fieldsets = (

@@ -1,9 +1,13 @@
+# -*- coding: iso-8859-1 -*-
 from django.shortcuts import render_to_response
 from django.http import Http404, HttpResponse
 from django.template import TemplateDoesNotExist, RequestContext
 from web.geo.models import *
 from django.contrib.gis.geos import fromstr
 from django.db import connection
+from django.contrib.auth.decorators import login_required
+from web.geo.render import render_tiles,GoogleProjection
+from django.conf import settings
 
 def default(request, page):
     try:
@@ -29,6 +33,10 @@ def xhr(request, page):
             return via(request)
         elif page == "querybypoint.xhr":
             return querybypoint(request)
+        elif page == "trazobypoint.xhr":
+            return trazobypoint(request)
+        elif page == "render_via.xhr":
+            return render_via(request)
         else:
             raise TemplateDoesNotExist
     except TemplateDoesNotExist:
@@ -154,3 +162,28 @@ def querybypoint(request):
     else:
         return render_to_response("querybypoint.html", {"resultado" : False, "count" : 0, "search_type" : "limite"}, mimetype="text/html; charset=iso8859-1")
 
+def trazobypoint(request):
+    params = request.REQUEST
+    if params.has_key("point") and params.has_key("zoom") and len(params["point"]) > 0 and len(params["zoom"]) > 0 and int(params["zoom"]) > 2:
+        result = {"id" : -1}
+        point = params["point"]
+        zoom = int(params["zoom"])
+        pnt = fromstr(point, srid=4326)
+        items = ViaTrazo.objects.filter(the_geom__dwithin=(pnt, 10*1.79866403673916e-05))[:1]
+        result["id"] = items[0].id
+        return render_to_response("trazobypoint.html", result, mimetype="text/html; charset=iso8859-1")
+    else:
+        return render_to_response("trazobypoint.html", {"id" : -1}, mimetype="text/html; charset=iso8859-1")
+
+@login_required
+def render_via(request):
+    params = request.REQUEST
+    ctx = {"title" : u"Generación de Cuadriculas", "is_popup":True}
+    if params.has_key('id'):
+        item = Via.objects.get(id=params["id"])
+        render_tiles(item.the_geom,settings.TILE_MAPFILE,settings.TILE_DIR,14,17)
+        ctx["messages"] = [u"Mapa Generado Exitosamente: %s" % item]
+        return render_to_response("render.html", ctx)
+    else:
+        ctx["messages"] = [u"Sin Acciones Pendientes"]
+        return render_to_response("render.html", ctx)
