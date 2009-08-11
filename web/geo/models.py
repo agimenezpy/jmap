@@ -7,7 +7,7 @@ class TipoVia(models.Model):
     descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.descripcion)
+        return u"[%d] %s" % (self.id, self.descripcion)
 
     class Meta:
         db_table = "tipo_via"
@@ -21,7 +21,7 @@ class TipoLimite(models.Model):
     descripcion = models.CharField(u"Descripción",max_length=60)
     
     def __unicode__(self):
-        return "[%d] %s"  % (self.id, self.descripcion)
+        return u"[%d] %s"  % (self.id, self.descripcion)
     
     class Meta:
         db_table = "tipo_limite"
@@ -41,7 +41,7 @@ class Limite(models.Model):
     objects = models.GeoManager()
     
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
+        return u"[%d] %s" % (self.id, self.nombre)
     
     class Meta:
         db_table = "limite_politico"
@@ -57,11 +57,11 @@ class Via(models.Model):
     zorder = models.IntegerField(u"Orden Z",default=0)
     prioridad = models.IntegerField(u"Número de Prioridad",default=0)
     wiki_id = models.CharField(u"WikiID",max_length=100,null=True,blank=True)
-    the_geom = models.MultiLineStringField(u"Geometría")
+    the_geom = models.MultiLineStringField(u"Geometría",null=True,blank=True)
     objects = models.GeoManager()
 
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
+        return u"[%d] %s" % (self.id, self.nombre)
     
     class Meta:
         db_table = "via_transito"
@@ -81,7 +81,7 @@ class ViaTrazo(models.Model):
     objects = models.GeoManager()
     
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.ref)
+        return u"[%d] %s" % (self.id, self.ref)
     
     class Meta:
         db_table = "via_trazo"
@@ -113,7 +113,7 @@ class AreaInteres(models.Model):
     objects = models.GeoManager()
     
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
+        return u"[%d] %s" % (self.id, self.nombre)
     
     class Meta:
         db_table = "area_interes"
@@ -144,7 +144,7 @@ class PuntoInteres(models.Model):
     objects = models.GeoManager()
     
     def __unicode__(self):
-        return "[%d] %s" % (self.id, self.nombre)
+        return u"[%d] %s" % (self.id, self.nombre)
     
     class Meta:
         db_table = "punto_interes"

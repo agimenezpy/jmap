@@ -1,0 +1,137 @@
+<script type="text/javascript" src='/media/scripts/prototype.js'></script>
+<script type="text/javascript" src='/media/scripts/OpenLayers.js'></script>
+<script type="text/javascript">
+var map;
+var wktParser;
+function olay_load() {
+    OpenLayers.Util.onImageLoadError = function() {
+        this.src = "/media/images/404.png";
+    }
+    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+    OpenLayers.ImgPath = '/media/images/';
+    
+    map = new OpenLayers.Map("map", {controls:[]});
+    
+    var opciones = {
+        isBaseLayer: true,
+        buffer: 0,
+        singleTile: true,
+        restrictedExtent: new OpenLayers.Bounds(
+                            -57.6714897155762,-25.3689365386963, -57.5250053405762, -25.2249450683594
+                        ),
+        attribution: '&copy;2009 SIG Municipal <img src="/media/images/copyright.gif" width="34">',
+        type: 'png',
+        displayOutsideMaxExtent: true,
+        numZoomLevels: 6,
+        maxResolution: 1.40625/Math.pow(2,12)
+    };
+    
+    var asu = new OpenLayers.Layer.WMS("Asunción", '/wms/mapnik', {layers: 'default', format : 'image/png'}, opciones);
+
+    map.addLayer(asu);
+    map.restrictedExtent = map.baseLayer.restrictedExtent;
+
+    map.addControl(new OpenLayers.Control.PanZoomBar());
+    map.addControl(new OpenLayers.Control.MousePosition());
+    map.addControl(new OpenLayers.Control.Navigation());
+    map.addControl(new OpenLayers.Control.ScaleLine());
+    map.addControl(new OpenLayers.Control.Attribution());
+    map.viewPortDiv.style.width = "";
+    map.zoomToExtent(map.restrictedExtent)
+    
+    var control = new OpenLayers.Control();
+    toggled = false;
+    OpenLayers.Util.extend(control, {
+        draw: function () {
+            this.point = new OpenLayers.Handler.Point( control,
+                {"done": function(evt) {
+                  var geom = wktParser.read(evt);
+                  var obj = new Ajax.Request(query_url,
+                            {method:'get',
+                            asynchronous:true,
+                            parameters:{'point': geom.geometry.toString(), 'zoom': map.getZoom()},
+                            onSuccess: function(request){
+                                if (request.responseText != "-1") {
+                                    $('searchbar').value = request.responseText;
+                                    $('changelist-search').submit()
+                                }
+                                else {
+                                    alert("No se encontraron elementos");
+                                }
+                              },
+                            onFailure: function(request) { alert ('No se pudo completar la peticion') }
+                            });
+                }});
+        }
+    });
+    
+    var button = new OpenLayers.Control.Button({
+        displayClass: "olControlPoint",
+        title: "Información Contextual",
+        trigger: function(evt) {
+            if (!toggled) {
+                this.activate()
+                control.point.activate();
+            }
+            else {
+                this.deactivate()
+                control.point.deactivate();
+            }
+            toggled = !toggled;
+            return true;
+        }
+    });
+    
+    var ms = new OpenLayers.Control.MouseDefaults(
+            {displayClass: "olControlNavigation", title:'Posicionamiento con el Mouse.'});
+    var panel = new OpenLayers.Control.Panel({defaultControl: ms, displayClass : "olControlNavToolbar"});
+    panel.addControls([
+        ms, 
+        new OpenLayers.Control.ZoomBox(
+            {displayClass : "olControlZoomBox", title:"Caja de Acercamiento: Realice click y arrastre para establecer la caja."}),
+        button
+    ]);
+    map.addControl(panel);
+    map.addControl(control);
+    wktParser = new OpenLayers.Format.WKT();
+}
+
+function mostrar_mapa() {
+    $('map').show();
+    if (!map) {
+        olay_load();
+    }
+    $('toolmap').hide();
+}
+</script>
+<style type="text/css">
+.olControlAttribution {
+    bottom: 0em;
+ }
+ 
+ .olControlScale {
+    left: 0px;
+    bottom: 0px;
+    text-align: left;
+ }
+ 
+ .olControlNavToolbar div {
+    top: 230px;
+    height: 24px;
+    width: 24px;
+ }
+ 
+ .olControlMousePosition {
+     top: 0px;
+ }
+ 
+ .olControlNavToolbar .olControlPointItemInactive {
+     background-image: url(/media/images/QueryDisable.png);
+     background-repeat: no-repeat;
+ }
+ 
+ .olControlNavToolbar .olControlPointItemActive {
+     background-image: url(/media/images/QueryEnable.png);
+     background-repeat: no-repeat;
+ }
+</style>
