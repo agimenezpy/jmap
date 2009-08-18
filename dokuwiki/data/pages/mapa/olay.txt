@@ -1,4 +1,4 @@
-====== Mapa Interactivo de la Ciudad ======
+====== Mapa Interactivo de la Ciudad de Asunción ======
 <html>
 <center>
 <div id="detalle" style="text-align: left"></div> 

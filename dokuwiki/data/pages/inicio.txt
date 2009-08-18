@@ -1,23 +1,20 @@
-====== Bienvenido ======
+====== Presentación ======
 
-**¡Bienvenido a nuestro nuevo sitio!**. Este sitio es una herramienta útil donde podrá encontrar información visual de ubicación y textual sobre los antecedentes históricos de los espacios públicos de la ciudad de Asunción.
+Acorde a las nuevas tecnologías de la comunicación e información, a través de Internet y lo que representa su alcance global,  la Presidenta de la Corporación Legislativa Municipal, **[[http://www.jma.gov.py/miembros/11.html|Concejala Gladys Cattebeke]]**, con el apoyo de los **[[http://www.jma.gov.py/html/nomina.html|Concejales/as]]**; han considerado necesario, útil y de gran valor poner al servicio de la ciudadanía un Mapa Digital Interactivo actualizado de la Ciudad de Asunción, con datos que permitirán ubicar todos los sitios de la capital del Paraguay con un solo click. 
 
-===== Información de Ubicación =====
+En ese sentido, esta Institución se abocó a la creación de la citada herramienta virtual, donde el ciudadano o cualquier persona del mundo pueda obtener información visual inmediata de la ubicación de sitios; como calles, límites políticos de los barrios, distritos, espacios públicos (plazas, monumentos, parques, cementerios, etc.), escuelas, hospitales y otros datos de interés y utilidad, con referencia textual sobre antecedentes históricos de los mismos. 
 
-Actualmente, el SIG (Sistema Informatizado Georeferenciado) municipal mantiene los
-planos de la ciudad de Asunción con información geográfica en formato digital. Esta
-información es utilizada para varios propósitos dentro de la [[http://www.mca.gov.py/|Municipalidad de Asunción]]. La información geográfica disponible se compone de datos sobre vías de tránsito, división
-política de la ciudad, plazas, parques y lugares de interés general.
+La Junta Municipal de Asunción considera que ha creado una herramienta de gran utilidad a la que se accede a través de nuestro sitio Web [[http://www.jma.gov.py |www.jma.gov.py]] que provee la integración de dos fuentes de información -geográfica y textual- de manera a ofrecer un plus de información relacionado a nuestro Municipio.
 
-===== Información Textual sobre Antecedentes Históricos y Legales =====
+====== Información de Ubicación ======
+Actualmente, el SIG (Sistema Informatizado Georeferenciado) Municipal y la Dirección General de Área Urbana mantienen los planos de la ciudad de Asunción con información geográfica en formato digital. Esta información es utilizada para varios propósitos dentro de la [[http://www.mca.gov.py | Municipalidad de Asunción]]. La información geográfica disponible se compone de datos sobre vías de tránsito, división política de la ciudad, plazas, parques y lugares de interés general. 
 
-Paralelamente, el departamento de Archivos de la Junta Municipal mantiene los datos de
-antecedentes legales e históricos de los espacios públicos de la ciudad. Estos datos
-representan la sustentación legal de la existencia de los entes ubicados geográficamente
-dentro de la ciudad de Asunción.
+====== Información Textual sobre antecedentes Históricos y Legales ======
 
-Este sitio web provee la integración de las dos fuentes de información, geográfica y textual,
-de manera a obtener un valor agregado de publicación de información concerniente a la
-comuna a través de las nuevas tecnologías de comunicación, como lo es Internet.
+Paralelamente, la Dirección de Archivos y la Dirección de Organización y Sistemas de la Junta Municipal mantienen los datos de antecedentes legales e históricos de los espacios públicos de la ciudad (Documentos Impresos y Digitales). Estos datos representan la sustentación legal de la existencia de los entes ubicados geográficamente dentro de la ciudad de Asunción.
+
+En síntesis, este emprendimiento busca proveer información útil, y, por sobre todo, brindar un valor agregado como un servicio más a la ciudadanía, acorde a los nuevos tiempos de información digital.
+
+
 
 ~~NOTOC~~
