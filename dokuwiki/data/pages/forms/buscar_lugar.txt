@@ -11,6 +11,7 @@
               <option value="any">Cualquiera</option>
               <option value="comisaria">Comisarias</option>
               <option value="hospital">Hospitales</option>
+              <option value="edificio">Edificio - Patrimonio Histórico</option>
              </select></td></tr>
     <tr align="center"><td colspan="2"><input class="button" name="commit" type="submit" value="Encontrar" /></td></tr>
     </table>
