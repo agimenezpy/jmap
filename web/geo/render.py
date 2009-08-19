@@ -85,7 +85,7 @@ class GoogleProjection:
         zoom = round(max(zx, zy))
         return int(zoom)
 
-def render_tiles(geom, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
+def render_tiles(geom, mapfile, tile_dir, minZoom=1,maxZoom=18, need_intersect=True):
     if not os.path.isdir(tile_dir):
          os.mkdir(tile_dir)
 
@@ -111,7 +111,7 @@ def render_tiles(geom, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
 
                 g2 = fromstr("POLYGON ((%s %s, %s %s, %s %s, %s %s, %s %s))" % (p0[0], p0[1], p0[0], p1[1], p1[0], p1[1], p1[0], p0[1], p0[0], p0[1]))
                 
-                if geom.intersects(g2):
+                if not need_intersect or geom.intersects(g2):
                     bbox = Envelope(c0.x,c0.y,c1.x,c1.y)
                     bbox.width(bbox.width() * 2)
                     bbox.height(bbox.height() * 2)

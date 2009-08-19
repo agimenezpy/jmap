@@ -56,8 +56,8 @@ function markFeature(id, detalle, wktFeature, xsw, ysw, xne, yne) {
             parameters:{'id': detalle, 'do':'export_xhtmlbody'},
             onFailure:function(request){ $('toolbar').hide() },
             onSuccess: function(request){
-                $('toolbar').update("Contiene Información Adicional <a id='showme' onclick=\"wgtDetalle.show()\" href='javascript:void(0)'>Mostrar</a>");
-                new Effect.Highlight("toolbar",{});
+                $('toolbar').hide();
+                addPopup(map.getCenter(), "<p style='padding: 5px;'><a id='showme' onclick=\"wgtDetalle.show()\" href='javascript:void(0)'>Mostrar</a> Información Adicional</p>");
                 wgtDetalle.setBody("<center><a id='awiki' target='_blank' href='doku.php?id=" + detalle + "'>Ver en otra ventana</a></center><div class='detalle'>" + request.responseText + "</div>");
               }
             });
@@ -123,8 +123,8 @@ function olay_load() {
                             asynchronous:true,
                             parameters:{'point': geom.geometry.toString(), 'zoom': map.getZoom()},
                             onSuccess: function(request){
-                                wgtBuscador.setBody("<div class='detalle'>" + request.responseText + "</div>");
-                                wgtBuscador.show()
+                                point = new OpenLayers.LonLat(geom.geometry.x, geom.geometry.y);
+                                addPopup(point.transform(map.displayProjection, map.projection), request.responseText);
                               }
                             });
                 }});
@@ -189,4 +189,13 @@ function osm_getTileURL(bounds) {
         x = ((x % limit) + limit) % limit;
         return this.url + z + "/" + x + "/" + y + "." + this.type;
     }
+}
+
+function addPopup(point, msg) {
+  if (map.popups.length > 0) {
+    map.popups[0].hide();
+    map.removePopup(map.popups[0]);
+  }
+  pop = new OpenLayers.Popup.FramedCloud("info",point,null,msg,null,true);
+  map.addPopup(pop);
 }

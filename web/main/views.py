@@ -61,7 +61,7 @@ def lugar(request):
         result["resultado"] = True
         nombre = params["nombre"].encode("latin-1").strip().replace(" "," & ")
         tipo = params["tipo"].strip()
-        qs = PuntoInteres.objects
+        qs = PuntoInteres.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
         result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
@@ -78,7 +78,7 @@ def espacio(request):
         result["resultado"] = True
         nombre = params["nombre"].encode("latin-1").strip().replace(" "," & ")
         tipo = params["tipo"].strip()
-        qs = AreaInteres.objects
+        qs = AreaInteres.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
         result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
@@ -95,7 +95,7 @@ def limite(request):
         result["resultado"] = True
         nombre = params["nombre"].encode("latin-1").strip().replace(" "," & ")
         tipo = params["tipo"].strip()
-        qs = Limite.objects
+        qs = Limite.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
         result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
@@ -153,10 +153,10 @@ def querybypoint(request):
                 tipo = "zona"
             else:
                 tipo = "barrio"
-            result["items"] = Limite.objects.filter(the_geom__contains=point,tipo__clave__exact=tipo)
+            result["items"] = Limite.objects.select_related().filter(the_geom__contains=point,tipo__clave__exact=tipo)
         else:
             pnt = fromstr(point, srid=4326)
-            result["items"] = Via.objects.filter(the_geom__dwithin=(pnt, 10*1.79866403673916e-05))
+            result["items"] = Via.objects.select_related().filter(the_geom__dwithin=(pnt, 10*1.79866403673916e-05))
         result["count"] = len(result["items"])
         return render_to_response("querybypoint.html", result, mimetype="text/html; charset=iso8859-1")
     else:
@@ -181,7 +181,7 @@ def render_via(request):
     ctx = {"title" : u"Generación de Cuadriculas", "is_popup":True}
     if params.has_key('id'):
         item = Via.objects.get(id=params["id"])
-        render_tiles(item.the_geom,settings.TILE_MAPFILE,settings.TILE_DIR,14,17)
+        render_tiles(item.the_geom,settings.TILE_MAPFILE,settings.TILE_DIR,14,17,False)
         ctx["messages"] = [u"Mapa Generado Exitosamente: %s" % item]
         return render_to_response("render.html", ctx)
     else:
