@@ -18,6 +18,7 @@ def default(request, page):
     except TemplateDoesNotExist:
         raise Http404()
 
+@cache_page(24*3600)
 def xhr(request, page):
     try:
         if page == "search.xhr":
