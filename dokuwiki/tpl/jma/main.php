@@ -229,7 +229,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php } ?>
     
     <div class="footerinc">
-        <p>&copy; 2009. Dirección de Archivos, Dirección de Organización y Sistemas de la Junta Municipal de Asunción. Todos los derechos reservados. <br>Design by <a href="mailto:agimenez@jma.gov.py">Alberto Giménez E.</a> <br>Implementado en el periodo 2008 - 2009.</p>
+        <p>&copy; 2009 Junta Municipal de Asunción - Todos los derechos reservados. <br> Dirección de Archivos - Dirección de Organización y Sistemas.  <br>Diseñado por <a href="mailto:agimenez@jma.gov.py">Alberto Giménez E.</a> <br>Implementado en el periodo 2008 - 2009.</p>
     </div>
 
   </div>
