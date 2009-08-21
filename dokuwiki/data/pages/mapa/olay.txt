@@ -1,5 +1,18 @@
 ====== Mapa Interactivo de la Ciudad de Asunción ======
 <html>
+<style type='text/css'>
+.olControlAttribution {bottom: 0em;}
+.olControlScale {left: 0px;bottom: 0px;text-align: left;}
+.olControlNavToolbar div {top: 230px;height: 24px;width: 24px;}
+.olControlMousePosition {top: 0px;}
+.olControlNavToolbar .olControlPointItemInactive {background-image: url(/media/images/QueryDisable.png);background-repeat: no-repeat;}
+.olControlNavToolbar .olControlPointItemActive {background-image: url(/media/images/QueryEnable.png);background-repeat: no-repeat;}
+.yui-panel .bd {overflow:auto;padding:4px;}
+.olControlNavToolbar .olControlNavigationItemActive {background-image: url("/media/styles/theme/default/img/panning-hand-on.png");}
+.olControlNavToolbar .olControlNavigationItemInactive {background-image: url("/media/styles/theme/default/img/panning-hand-off.png");}
+.olControlNavToolbar .olControlZoomBoxItemActive {background-image: url("/media/styles/theme/default/img/drag-rectangle-on.png");}
+.olControlNavToolbar .olControlZoomBoxItemInactive {background-image: url("/media/styles/theme/default/img/drag-rectangle-off.png");background-repeat: no-repeat;}
+</style>
 <center>
 <div id="detalle" style="text-align: left"></div> 
 <div id="buscador" style="text-align: left"></div> 
@@ -11,14 +24,13 @@
  
     <p>Los elementos de búsqueda disponibles son calles e intersecciones, el formato de la búsqueda es<br>
 
-    <code>nombre de calle [número] [/ nombre de intersección][, nombre de barrio][, nombre ciudad]</code><br>
-    donde los elementos entre corchetes son opcionales.
+    <code>nombre de calle [número]</code><br>
     </p>
     <p> Ejemplos:
         <ul>
             <li>Carlos López</li>
-            <li>eusebio ayala / chaco</li>
-            <li>avenida, lambare</li>
+            <li>eusebio ayala</li>
+            <li>avenida lambare</li>
         </ul>
     </p>
     <center><a id="closeme" onclick="$('stip').hide()" href="javascript:void(0)">Cerrar</a></center>
