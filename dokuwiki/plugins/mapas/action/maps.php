@@ -64,11 +64,6 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
 	  "_data" => "",
 	  "src" => "http://www.openlayers.org/api/OpenLayers.js"
 	);
-	$event->data["link"][] = array (
-	  "type" => "text/css",
-	  "rel" => "stylesheet", 
-	  "href" => DOKU_BASE."media/styles/theme/default/style.css",
-        );
 	$event->data["script"][] = array ("type" => "text/javascript",
 	  "charset" => "utf-8",
 	  "_data" => "",
@@ -99,38 +94,6 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
 	  "_data" => "",
 	  "src" => DOKU_BASE."media/scripts/widgets.js"
 	);
-	$event->data["style"][] = array ("type" => "text/css",
-	  "charset" => "utf-8",
-	  "_data" => "
-	    .olControlAttribution {
-	    bottom: 0em;
-	    }
-	    
-	    .olControlScale {
-	    left: 0px;
-	    bottom: 0px;
-	    text-align: left;
-	    }
-	    
-	    .olControlNavToolbar div {
-	    top: 230px;
-	    height: 24px;
-	    width: 24px;
-	    }
-	    
-	    .olControlMousePosition {
-	     top: 0px;
-	    }
-	    
-	    .olControlNavToolbar .olControlPointItemInactive {
-	     background-image: url(/media/images/QueryDisable.png);
-	     background-repeat: no-repeat;
-	    }
-	    
-	    .olControlNavToolbar .olControlPointItemActive {
-	     background-image: url(/media/images/QueryEnable.png);
-	     background-repeat: no-repeat;
-	}");
     }
   }
 }
