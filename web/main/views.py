@@ -8,6 +8,8 @@ from django.db import connection
 from django.contrib.auth.decorators import login_required
 from web.geo.render import render_tiles,GoogleProjection
 from django.conf import settings
+from django.views.decorators.cache import cache_page
+
 
 def default(request, page):
     try:
