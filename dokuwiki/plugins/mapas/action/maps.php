@@ -40,36 +40,6 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
   function _hookjs(&$event, $param) {
     global $conf;
     global $ID;
-    $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/prototype.js"
-            );
-    $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/effects.js"
-            );
-    $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/yahoo-dom-event.js"
-            );
-    $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/container-min.js"
-            );
-    $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/widgets.js"
-            );
-    $event->data["link"][] = array (
-            "type" => "text/css",
-            "rel" => "stylesheet", 
-            "href" => DOKU_BASE."media/styles/assets/container.css",
-          );
     if ($ID == "mapa:gmap") {
         $apikey = $this->getConf('gmapapikey');
         $event->data["script"][] = array ("type" => "text/javascript",
@@ -90,54 +60,77 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
     }
     else if ($ID == "mapa:olay") {
         $event->data["script"][] = array ("type" => "text/javascript",
-                    "charset" => "utf-8",
-                    "_data" => "",
-                    "src" => DOKU_BASE."media/scripts/OpenLayers.js"
-                    );
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => "http://www.openlayers.org/api/OpenLayers.js"
+	);
+	$event->data["link"][] = array (
+	  "type" => "text/css",
+	  "rel" => "stylesheet", 
+	  "href" => DOKU_BASE."media/styles/theme/default/style.css",
+        );
+	$event->data["script"][] = array ("type" => "text/javascript",
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => "http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"
+	);
         $event->data["script"][] = array ("type" => "text/javascript",
-            "charset" => "utf-8",
-            "_data" => "",
-            "src" => DOKU_BASE."media/scripts/openlayersmap.js"
-            );
-        $event->data["link"][] = array (
-            "type" => "text/css",
-            "rel" => "stylesheet", 
-            "href" => DOKU_BASE."media/styles/theme/default/style.css",
-          );
-        $event->data["style"][] = array ("type" => "text/css",
-            "charset" => "utf-8",
-            "_data" => "                             
-                .olControlAttribution {
-                   bottom: 0em;
-                }
-                
-                .olControlScale {
-                   left: 0px;
-                   bottom: 0px;
-                   text-align: left;
-                }
-                
-                .olControlNavToolbar div {
-                   top: 230px;
-                   height: 24px;
-                   width: 24px;
-                }
-                
-                .olControlMousePosition {
-                    top: 0px;
-                }
-                
-                .olControlNavToolbar .olControlPointItemInactive {
-                    background-image: url(/media/images/QueryDisable.png);
-                    background-repeat: no-repeat;
-                }
-                
-                .olControlNavToolbar .olControlPointItemActive {
-                    background-image: url(/media/images/QueryEnable.png);
-                    background-repeat: no-repeat;
-                }
-        ");
-
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => DOKU_BASE."media/scripts/openlayersmap.js"
+        );
+	$event->data["script"][] = array ("type" => "text/javascript",
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => "http://yui.yahooapis.com/2.7.0/build/yahoo-dom-event/yahoo-dom-event.js"
+	);
+	$event->data["script"][] = array ("type" => "text/javascript",
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => "http://yui.yahooapis.com/2.7.0/build/container/container-min.js"
+    	);
+	$event->data["link"][] = array (
+	  "type" => "text/css",
+	  "rel" => "stylesheet", 
+	  "href" => "http://yui.yahooapis.com/2.7.0/build/container/assets/container.css",
+        );
+	$event->data["script"][] = array ("type" => "text/javascript",
+	  "charset" => "utf-8",
+	  "_data" => "",
+	  "src" => DOKU_BASE."media/scripts/widgets.js"
+	);
+	$event->data["style"][] = array ("type" => "text/css",
+	  "charset" => "utf-8",
+	  "_data" => "
+	    .olControlAttribution {
+	    bottom: 0em;
+	    }
+	    
+	    .olControlScale {
+	    left: 0px;
+	    bottom: 0px;
+	    text-align: left;
+	    }
+	    
+	    .olControlNavToolbar div {
+	    top: 230px;
+	    height: 24px;
+	    width: 24px;
+	    }
+	    
+	    .olControlMousePosition {
+	     top: 0px;
+	    }
+	    
+	    .olControlNavToolbar .olControlPointItemInactive {
+	     background-image: url(/media/images/QueryDisable.png);
+	     background-repeat: no-repeat;
+	    }
+	    
+	    .olControlNavToolbar .olControlPointItemActive {
+	     background-image: url(/media/images/QueryEnable.png);
+	     background-repeat: no-repeat;
+	}");
     }
   }
 }
