@@ -1,0 +1,15 @@
+====== Ayuda ======
+
+===== Tópicos de Ayuda =====
+
+Esta es la sección de ayuda del sitio. Elija los siguientes tópicos de acuerdo a su interes.
+  * [[ayuda:buscar_lugar|Búsqueda de Lugares]]
+  * [[ayuda:buscar_espacio|Búsqueda de Espacios Públicos]]
+  * [[ayuda:buscar_limite|Búsqueda de Limites Políticos]]
+  * [[ayuda:buscar_calle|Búsqueda de Calles]]
+  * [[ayuda:mapa|Uso del Mapa Interactivo]]
+
+
+
+
+

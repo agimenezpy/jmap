@@ -1,0 +1,17 @@
+====== Búsqueda de Lugares ======
+
+La herramienta de //Buscar Lugar// consisten en hallar a partir de una palabra clave un sitio de interés de cierta categoría como:
+  * Hospitales
+  * Comisarias
+  * Edificios de Patrimonio Histórico
+  * Y otros.
+
+Dependiendo de cómo se vayan cargando puntos adicionales de interés la lista se extenderá a más categorías. 
+
+Al realizar //click// en la herramienta de búsqueda aparece un formulario con los campos a ser utilizados para la búsqueda:
+  - **Nombre del lugar**: Se debe escribir la palabra que caracterice al lugar. Ej. hospital San pablo
+  - **Tipo de Lugar**: Se debe elegir alguna categoría de filtrado o ninguna.
+
+Los resultados de la búsqueda son enlaces que permiten ubicar en el mapa interactivo los elementos seleccionados.
+
+<html><div class="info"><b>Atencion</b>: Para realizar una búsqueda el nombre debe ser claro como para que el resultado sea encontrado. Es útil utilizar los nombres comunes y evitar las abreviaturas. El buscador no es sensible a los acentos y mayúsculas, es decir, es lo mismo encarnación y encarnacion, como Juan, JUan, JUAN o juan, etc.</div></html>
