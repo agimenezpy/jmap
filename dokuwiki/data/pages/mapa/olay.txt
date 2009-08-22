@@ -12,6 +12,7 @@
 .olControlNavToolbar .olControlNavigationItemInactive {background-image: url("/media/styles/theme/default/img/panning-hand-off.png");}
 .olControlNavToolbar .olControlZoomBoxItemActive {background-image: url("/media/styles/theme/default/img/drag-rectangle-on.png");}
 .olControlNavToolbar .olControlZoomBoxItemInactive {background-image: url("/media/styles/theme/default/img/drag-rectangle-off.png");background-repeat: no-repeat;}
+.olPopupCloseBox {background:transparent url("/media/styles/theme/default/img/close.gif") no-repeat scroll 0 0; }
 </style>
 <center>
 <div id="detalle" style="text-align: left"></div> 
@@ -22,9 +23,9 @@
     <!--hr class="clear-contentunit"/-->
     <h1>Búsqueda Rápida</h1>
  
-    <p>Los elementos de búsqueda disponibles son calles e intersecciones, el formato de la búsqueda es<br>
+    <p>Los elementos de búsqueda disponibles son calles, el formato de la búsqueda es<br>
 
-    <code>nombre de calle [número]</code><br>
+    <code>nombre de calle</code><br>
     </p>
     <p> Ejemplos:
         <ul>

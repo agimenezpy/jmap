@@ -1,1 +1,1 @@
-CREATE INDEX idx_aoi ON area_interes USING gin(to_tsvector('spanish', nombre));
+CREATE INDEX idx_aoi ON area_interes USING gin(to_tsvector('spanish', translate(nombre, 'ÁÉÍÓÚ', 'AEIOU')));
