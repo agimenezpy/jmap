@@ -6,11 +6,15 @@ from web.geo.models import *
 from django.contrib.gis.geos import fromstr
 from django.db import connection
 from django.contrib.auth.decorators import login_required
-from web.geo.render import render_tiles,GoogleProjection
+from web.geo.render import render_tiles
 from django.conf import settings
 from django.views.decorators.cache import cache_page
 
-
+def sanetize(word):
+    word = word.strip()
+    word = unicode(word.encode("LATIN1"), "UTF-8").encode("LATIN1")
+    return word.replace(" "," & ")
+    
 def default(request, page):
     try:
         if page == "index.html":
@@ -50,8 +54,8 @@ def calle_simple(request):
     if params.has_key("query"):
         result = {}
         result["resultado"] = True
-        nombre = params["query"].encode("latin-1").strip().replace(" "," & ")
-        result["items"] = Via.objects.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
+        nombre = sanetize(params["query"])
+        result["items"] = Via.objects.extra(where=["to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(upper(%s), 'аимсз', 'AEIOU'))"], params=[nombre])
         result["count"] = len(result["items"])
         return render_to_response("calle.html", result, mimetype="application/javascript; charset=iso8859-1")
     else:
@@ -62,12 +66,12 @@ def lugar(request):
     if params.has_key("nombre") and params.has_key("tipo") and len(params["nombre"]) > 0 and len(params["tipo"]) > 0:
         result = {}
         result["resultado"] = True
-        nombre = params["nombre"].encode("latin-1").strip().replace(" "," & ")
+        nombre = params["nombre"].encode("latin-1").upper().strip().replace(" "," & ")
         tipo = params["tipo"].strip()
         qs = PuntoInteres.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
-        result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
+        result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))"], params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "lugar"
         return render_to_response("resultados.html", result, mimetype="application/javascript; charset=iso8859-1")
@@ -84,7 +88,7 @@ def espacio(request):
         qs = AreaInteres.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
-        result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
+        result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))"], params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "espacio"
         return render_to_response("resultados.html", result, mimetype="application/javascript; charset=iso8859-1")
@@ -101,7 +105,7 @@ def limite(request):
         qs = Limite.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
-        result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"], params=[nombre])
+        result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))"], params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "limite"
         return render_to_response("resultados.html", result, mimetype="application/javascript; charset=iso8859-1")
@@ -117,10 +121,10 @@ def via(request):
         if len(params["entre"]) > 0:
             entre = params["entre"].encode("latin-1").strip().replace(" "," & ")
             cursor = connection.cursor()
-            cursor.execute("""SELECT c1.id, c2.id, c1.abrev, c2.abrev, asewkb(intersection(c1.the_geom, c2.the_geom))
+            cursor.execute(u"""SELECT c1.id, c2.id, c1.abrev, c2.abrev, asewkb(intersection(c1.the_geom, c2.the_geom))
                            FROM via_transito c1, via_transito c2 
-                           WHERE to_tsvector('spanish', c1.nombre) @@ to_tsquery(%s)
-                             AND to_tsvector('spanish', c2.nombre) @@ to_tsquery(%s)
+                           WHERE to_tsvector('spanish', translate(c1.nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))
+                             AND to_tsvector('spanish', translate(c2.nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))
                              AND intersects(c1.the_geom, c2.the_geom) = 't'
                            """, [nombre, entre])
             result['items'] = map(lambda (row): {'id' : "%s%s" % (row[0], row[1]),
@@ -137,7 +141,7 @@ def via(request):
                 qs = Via.objects.filter(the_geom__contained=bound.the_geom)
             else:
                 qs = Via.objects
-            result["items"] = qs.extra(where=["to_tsvector('spanish', nombre) @@ to_tsquery(%s)"],params=[nombre])
+            result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU'))) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU')))"],params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "calle_"
         return render_to_response("calle.html", result, mimetype="application/javascript; charset=iso8859-1")
