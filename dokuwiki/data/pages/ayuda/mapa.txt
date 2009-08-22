@@ -1,0 +1,24 @@
+====== Uso del Mapa Interactivo ======
+
+===== Controles Principales =====
+
+Estos controles son activados sobre el mapa interactivo cuando se realiza un //click// izquierdo del ratón sobre los mismos.
+
+^  Icono  ^  Descripción  ^  Tecla de Ratón  ^
+|  <html><img src="/media/images/north-mini.png"></html>  |  Mover hacia el norte   |  -  |
+|  <html><img src="/media/images/south-mini.png"></html>  |  Mover hacia el sur   |  -  |
+|  <html><img src="/media/images/east-mini.png"></html>  |  Mover hacia el este   |  -  |
+|  <html><img src="/media/images/west-mini.png"></html>  |  Mover hacia el oeste   |  -  |
+|  <html><img src="/media/images/zoom-plus-mini.png"></html>  |  Acercar 1 nivel  |  Rueda hacia adelante (2 niveles)  |
+|  <html><div id="OpenLayers_Control_PanZoomBar_ZoombarOpenLayers.Map_2" style="background-image: url(/media/images/zoombar.png); width: 18px; height: 66px; margin-left: 11px"></div></html>  | Barra de acercamiento. 6 Niveles disponibles   |  Rueda hacia adelante y atrás (2 niveles)  |
+|  <html><img src="/media/images/zoom-minus-mini.png"></html>  |  Alejar 1 nivel  |  Rueda hacia atrás  (2 niveles)  |
+|  <html><img src="/media/styles/theme/default/img/panning-hand-on.png"></html>  |  Mover en todas las direcciones   |  Sostener //click// izquierdo y mover el ratón  |
+|  <html><img src="/media/styles/theme/default/img/drag-rectangle-on.png"></html>  |  Acercar en un área específica   |  Sostener //click// izquierdo y mover el ratón para seleccionar un área  |
+|  <html><img src="/media/images/QueryEnable.png"></html>  |  Consultar una característica sobre un elemento del mapa   |  //Click// izquierdo sobre alguna calle, barrio o distrito  |
+
+===== Elementos Adicionales =====
+
+^  Figura  ^  Descripción  ^
+|  {{:ayuda:escala.jpg|}}  |  Escala del acercamiento a la vista  |
+|  {{:ayuda:atribucion.jpg|}}  |  Atribución de los datos geográficos  |
+|  {{:ayuda:posicion.jpg|}}  |  Posición Geográfica de longitud, latitud (''radianes'') de la ubicación del cursor del ratón dentro del mapa   |

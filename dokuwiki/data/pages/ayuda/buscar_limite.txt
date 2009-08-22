@@ -1,0 +1,13 @@
+====== Búsqueda de Límites Políticos ======
+
+La herramienta de //Buscar Límites Políticos// consiste en hallar a partir de una palabra clave una delimitación de Asunción de cierta categoría como:
+  * Barrios
+  * Distritos o parroquias
+
+Al realizar //click// en la herramienta de búsqueda aparece un formulario con los campos a ser utilizados para la búsqueda:
+  - **Nombre del Limite**: Se debe escribir la palabra que caracterice al limite. Ej. Encarnacion
+  - **Tipo de Limite**: Se debe elegir alguna categoría de filtrado o ninguna.
+
+Los resultados de la búsqueda son enlaces que permiten ubicar en el mapa interactivo los elementos seleccionados.
+
+<html><div class="info"><b>Atencion</b>: Para realizar una búsqueda el nombre debe ser claro como para que el resultado sea encontrado. Es útil utilizar los nombres comunes y evitar las abreviaturas. El buscador no es sensible a los acentos y mayúsculas, es decir, es lo mismo encarnación y encarnacion, como Juan, JUan, JUAN o juan, etc.</div></html>
