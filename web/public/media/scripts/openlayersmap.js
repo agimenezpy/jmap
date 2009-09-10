@@ -104,11 +104,13 @@ function olay_load() {
 
     map.addControl(new OpenLayers.Control.PanZoomBar());
     map.addControl(new OpenLayers.Control.MousePosition());
+    map.addControl(new OpenLayers.Control.Permalink($('permalink')));
     map.addControl(new OpenLayers.Control.Navigation());
     map.addControl(new OpenLayers.Control.ScaleLine());
     map.addControl(new OpenLayers.Control.Attribution());
     map.viewPortDiv.style.width = "";
-    map.zoomToExtent(map.restrictedExtent)
+    if (map.getCenter() == null)
+      map.zoomToExtent(map.restrictedExtent)
     OpenLayers.Element.hide("msg");
     
     var control = new OpenLayers.Control();

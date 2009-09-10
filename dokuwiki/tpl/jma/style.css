@@ -39,3 +39,11 @@ div.dokuwiki .toolbox {
     float: right;
     padding: 50px 5px 0px 0px;
 }
+
+.toolbar-icon {
+    background-image: url(/media/images/icons.png);
+    height: 20px;
+    left: 4px;
+    top: 6px;
+    width: 20px;
+}
