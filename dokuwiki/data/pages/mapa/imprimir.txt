@@ -1,0 +1,13 @@
+====== Mapa Interactivo de la Ciudad de Asunción ======
+<html>
+<style type="text/css">
+div#map { width: 700px; height: 700px;}
+</style>
+<center>
+<div id="map"><img id="mapimage" src=""></div>
+</center>
+
+<script type="text/javascript">
+document.getElementById("mapimage").src =  "/print.xhr" + location.search;
+</script>
+</html>

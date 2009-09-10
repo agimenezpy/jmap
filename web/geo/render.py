@@ -4,6 +4,11 @@ from subprocess import call
 import sys, os
 from mapnik import *
 from django.contrib.gis.geos import fromstr
+from web.settings import TILE_DIR
+from PIL import Image
+from StringIO import StringIO
+
+ATRIB = Image.open(TILE_DIR + "atribucion.png")
 
 DEG_TO_RAD = pi/180
 RAD_TO_DEG = 180/pi
@@ -63,7 +68,6 @@ class GoogleProjection:
 
     def getLLCenter(self, center, zoom, w, h):
         resolution = RESOLUTION_0 / 2**zoom
-        print resolution
         dx_2 = resolution*w / 2
         dy_2 = resolution*h / 2
         return ( center[0] -  dx_2, center[1] - dy_2, center[0] + dx_2, center[1] + dy_2)
@@ -140,3 +144,39 @@ def render_tiles(geom, mapfile, tile_dir, minZoom=1,maxZoom=18, need_intersect=T
                     if bytes == 334:
                         empty = " Empty Tile "
                         os.unlink(tile_uri)
+
+def static_map(lon, lat, zoom, width, height,response):
+    gprj = GoogleProjection(19)
+    ppr = gprj.forwardMercator(lon,lat)
+    bbpr = gprj.getLLCenter(ppr,zoom,width,height)
+    ll0 = gprj.inverseMercator(bbpr[0],bbpr[3])
+    ll1 = gprj.inverseMercator(bbpr[2],bbpr[1])
+    
+    px0 = gprj.fromLLtoPixel(ll0,zoom)
+    px1 = gprj.fromLLtoPixel(ll1,zoom)
+    center = gprj.fromLLtoPixel((lon,lat),zoom)
+
+    l_x = int(px0[0]/256.0)
+    u_x = int(px1[0]/256.0)
+    l_y = int(px0[1]/256.0)
+    u_y = int(px1[1]/256.0)
+    size = (int(u_x - l_x + 1)*256, (u_y - l_y + 1)*256)
+    r_p = gprj.fromLLtoPixel(gprj.fromPixelToLL((l_x*256, l_y*256), zoom),zoom)
+    c_x = int(center[0] - r_p[0])
+    c_y = int(center[1] - r_p[1])
+    im = Image.new("RGBA",size,(242,239,233,0))
+    for y in range(l_y,u_y+1):
+        for x in range(l_x,u_x+1):
+            filename = "%s%d/%d/%d.jpg" % (TILE_DIR,zoom,x,y)
+            if os.path.exists(filename):
+                cx = (x - l_x)*256
+                cy = (y - l_y)*256
+                tile = Image.open(filename)
+                im.paste(tile,(cx,cy))
+                del tile
+    size = (width/2,height/2)
+    im = im.crop((c_x - size[0],c_y - size[1],c_x + size[0],c_y + size[1]))
+    layer = Image.new("RGBA",(width,height),(0,0,0,0))
+    layer.paste(ATRIB, (width - 250, height - 40))
+    out = Image.composite(layer, im, layer)
+    out.save(response,"JPEG",quality=90)

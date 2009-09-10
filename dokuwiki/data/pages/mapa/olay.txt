@@ -16,7 +16,28 @@
 </style>
 <center>
 <div id="detalle" style="text-align: left"></div> 
-<div id="buscador" style="text-align: left"></div> 
+<div id="buscador" style="text-align: left"></div>
+<div style="width: 600px">
+<table width="100%" style="margin: 0 0 0 0;">
+    <tr>
+    <td align="right" width="67%"></td>
+    <td align="right">
+        <table style="margin: 0 0 0 0;"><tr>
+            <td><div class="toolbar-icon" style="background-position: -300px 0pt"></div></td>
+            <td><a id="print" href="javascript:void(0)" onclick="printMap()">Imprimir</a></td>
+            </tr>
+        </table>
+    </td>
+    <td align="right">
+        <table style="margin: 0 0 0 0;"><tr>
+            <td><div class="toolbar-icon" style="background-position: -140px 0pt"></div></td>
+            <td><a id="permalink" href="javascript:void(0)">Enlazar</a></td>
+            </tr>
+        </table>
+    </td>
+    </tr>
+</table>
+</div>
 <div id="map"><div id="msg" style="color: gray; font-size: 1em; text-align: left">Cargando ...</div></div>
 <div id="toolbar"></div>
 <div id="stip" style="display: none;">

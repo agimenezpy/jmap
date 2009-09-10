@@ -6,9 +6,8 @@ from web.geo.models import *
 from django.contrib.gis.geos import fromstr
 from django.db import connection
 from django.contrib.auth.decorators import login_required
-from web.geo.render import render_tiles
+from web.geo.render import render_tiles,static_map
 from django.conf import settings
-from django.views.decorators.cache import cache_page
 
 def sanetize(word):
     word = word.strip()
@@ -24,7 +23,6 @@ def default(request, page):
     except TemplateDoesNotExist:
         raise Http404()
 
-@cache_page(24*3600)
 def xhr(request, page):
     try:
         if page == "search.xhr":
@@ -44,6 +42,8 @@ def xhr(request, page):
             return trazobypoint(request)
         elif page == "render_via.xhr":
             return render_via(request)
+        elif page == "print.xhr":
+            return print_img(request)
         else:
             raise TemplateDoesNotExist
     except TemplateDoesNotExist:
@@ -194,3 +194,20 @@ def render_via(request):
     else:
         ctx["messages"] = [u"Sin Acciones Pendientes"]
         return render_to_response("render.html", ctx)
+
+
+def print_img(request):
+    params = request.REQUEST
+    try:
+        #width = int(params['width'])
+        #height = int(params['height'])
+        width = 700
+        height = 700
+        lon = float(params['lon'])
+        lat = float(params['lat'])
+        zoom = int(params['zoom']) + 12
+        response = HttpResponse(mimetype="image/jpeg")
+        static_map(lon,lat,zoom,width,height,response)
+        return response
+    except:
+        raise TemplateDoesNotExist
