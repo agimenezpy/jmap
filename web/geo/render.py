@@ -5,7 +5,7 @@ import sys, os
 from mapnik import *
 from django.contrib.gis.geos import fromstr
 from web.settings import TILE_DIR
-from PIL import Image
+import PIL
 from StringIO import StringIO
 
 ATRIB = Image.open(TILE_DIR + "atribucion.png")
@@ -164,19 +164,19 @@ def static_map(lon, lat, zoom, width, height,response):
     r_p = gprj.fromLLtoPixel(gprj.fromPixelToLL((l_x*256, l_y*256), zoom),zoom)
     c_x = int(center[0] - r_p[0])
     c_y = int(center[1] - r_p[1])
-    im = Image.new("RGBA",size,(242,239,233,0))
+    im = PIL.Image.new("RGBA",size,(242,239,233,0))
     for y in range(l_y,u_y+1):
         for x in range(l_x,u_x+1):
             filename = "%s%d/%d/%d.jpg" % (TILE_DIR,zoom,x,y)
             if os.path.exists(filename):
                 cx = (x - l_x)*256
                 cy = (y - l_y)*256
-                tile = Image.open(filename)
+                tile = PIL.Image.open(filename)
                 im.paste(tile,(cx,cy))
                 del tile
     size = (width/2,height/2)
     im = im.crop((c_x - size[0],c_y - size[1],c_x + size[0],c_y + size[1]))
-    layer = Image.new("RGBA",(width,height),(0,0,0,0))
+    layer = PIL.Image.new("RGBA",(width,height),(0,0,0,0))
     layer.paste(ATRIB, (width - 250, height - 40))
-    out = Image.composite(layer, im, layer)
+    out = PIL.Image.composite(layer, im, layer)
     out.save(response,"JPEG",quality=90)
