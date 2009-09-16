@@ -58,7 +58,7 @@ class action_plugin_mapas_maps extends DokuWiki_Action_Plugin {
             "src" => DOKU_BASE."media/scripts/dragzoom.pack.js"
             );
     }
-    else if ($ID == "mapa:olay") {
+    else if ($ID == "mapa:inicio" || $ID == "mapa:olay") {
         $event->data["script"][] = array ("type" => "text/javascript",
 	  "charset" => "utf-8",
 	  "_data" => "",
