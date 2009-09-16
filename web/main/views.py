@@ -55,7 +55,7 @@ def calle_simple(request):
         result = {}
         result["resultado"] = True
         nombre = sanetize(params["query"])
-        result["items"] = Via.objects.extra(where=["to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(upper(%s), 'аимсз', 'AEIOU'))"], params=[nombre])
+        result["items"] = Via.objects.extra(where=["to_tsvector('spanish', translate(nombre, 'аимсзэ', 'AEIOUU')) @@ to_tsquery(translate(upper(%s), 'аимсзэ', 'AEIOUU'))"], params=[nombre])
         result["count"] = len(result["items"])
         return render_to_response("calle.html", result, mimetype="application/javascript; charset=iso8859-1")
     else:
@@ -105,7 +105,7 @@ def limite(request):
         qs = Limite.objects.select_related()
         if tipo != "any":
             qs = qs.filter(tipo__clave__exact=tipo)
-        result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсз', 'AEIOU')) @@ to_tsquery(translate(%s, 'аимсз', 'AEIOU'))"], params=[nombre])
+        result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(nombre, 'аимсзэ', 'AEIOUU')) @@ to_tsquery(translate(%s, 'аимсзэ', 'AEIOUU'))"], params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "limite"
         return render_to_response("resultados.html", result, mimetype="application/javascript; charset=iso8859-1")
