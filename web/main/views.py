@@ -129,7 +129,7 @@ def via(request):
                            """, [nombre, entre])
             result['items'] = map(lambda (row): {'id' : "%s%s" % (row[0], row[1]),
                                               'abrev' : "%s y %s" % (row[2], row[3]),
-                                              'wiki_id' : None,
+                                              'wiki_id' : "%s y %s" % (row[2], row[3]),
                                               'the_geom' : fromstr(row[4])}, cursor.fetchall())
         else:
             bound = None
@@ -141,7 +141,7 @@ def via(request):
                 qs = Via.objects.filter(the_geom__contained=bound.the_geom)
             else:
                 qs = Via.objects
-            result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(upper(nombre), '賽邲竦', 'AEIOUU'))) @@ to_tsquery(translate(upper(%s), '賽邲竦', 'AEIOUU')))"],params=[nombre])
+            result["items"] = qs.extra(where=[u"to_tsvector('spanish', translate(upper(nombre), '賽邲竦', 'AEIOUU')) @@ to_tsquery(translate(upper(%s), '賽邲竦', 'AEIOUU'))"],params=[nombre])
         result["count"] = len(result["items"])
         result["search_type"] = "calle_"
         return render_to_response("calle.html", result, mimetype="application/javascript; charset=iso8859-1")
