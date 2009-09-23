@@ -17,7 +17,7 @@ function goSearch(form) {
   return false;
 }
 
-function markFeature(id, detalle, wktFeature, xsw, ysw, xne, yne) {
+function markFeature(id, nombre, detalle, wktFeature, xsw, ysw, xne, yne) {
   wgtBuscador.hide();
   if (anyoverlay) {
     map.layers[1].destroyFeatures();
@@ -43,10 +43,9 @@ function markFeature(id, detalle, wktFeature, xsw, ysw, xne, yne) {
   map.layers[3].setVisibility(false);
   if (geom && geom[0].geometry.CLASS_NAME == "OpenLayers.Geometry.Point") {
     map.layers[3].addFeatures(geom);
-    if (detalle && detalle != "None") {
+    if (nombre) {
       p = new OpenLayers.LonLat(geom[0].geometry.x,geom[0].geometry.y);
-      addPopup(p,detalle);
-      detalle = null;
+      addPopup(p,nombre);
     }
   }
   else {

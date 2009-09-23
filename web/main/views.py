@@ -129,7 +129,7 @@ def via(request):
                            """, [nombre, entre])
             result['items'] = map(lambda (row): {'id' : "%s%s" % (row[0], row[1]),
                                               'abrev' : "%s y %s" % (row[2], row[3]),
-                                              'wiki_id' : "%s y %s" % (row[2], row[3]),
+                                              'wiki_id' : None,
                                               'the_geom' : fromstr(row[4])}, cursor.fetchall())
         else:
             bound = None
